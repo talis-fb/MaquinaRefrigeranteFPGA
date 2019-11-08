@@ -1,0 +1,45 @@
+|berranteiro
+clock => fstate~1.DATAIN
+reset => r1.OUTPUTSELECT
+reset => r2.OUTPUTSELECT
+reset => r3.OUTPUTSELECT
+reset => r4.OUTPUTSELECT
+reset => reg_fstate.entregaSemTroco_407.ACLR
+reset => reg_fstate.entregaComTroco_413.ACLR
+reset => reg_fstate.start4_419.ACLR
+reset => reg_fstate.start3_425.ACLR
+reset => reg_fstate.start2_431.ACLR
+reset => reg_fstate.start1_437.ACLR
+reset => reg_fstate.maisHalf1_443.ACLR
+reset => reg_fstate.maisOne1_449.ACLR
+reset => reg_fstate.principio_455.PRESET
+reset => pMeta[1].IN1
+reset => pMeta[2].IN1
+reset => carry[0].IN1
+reset => pnow[0].IN1
+reset => pnow[1].IN1
+reset => pMeta[0].IN1
+B1 => process_1.IN0
+B1 => process_1.IN0
+B1 => process_1.IN0
+B2 => process_1.IN1
+B2 => process_1.IN1
+B2 => process_1.IN1
+B3 => process_1.IN1
+B3 => process_1.IN1
+B3 => process_1.IN1
+B3 => process_1.IN1
+B4 => process_1.IN1
+B4 => process_1.IN1
+B4 => process_1.IN1
+B4 => process_1.IN1
+butOne => process_1.IN0
+butOne => process_1.IN0
+butHalf => process_1.IN1
+butHalf => process_1.IN1
+r1 <= r1.DB_MAX_OUTPUT_PORT_TYPE
+r2 <= r2.DB_MAX_OUTPUT_PORT_TYPE
+r3 <= r3.DB_MAX_OUTPUT_PORT_TYPE
+r4 <= r4.DB_MAX_OUTPUT_PORT_TYPE
+
+

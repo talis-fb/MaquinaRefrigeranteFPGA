@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Nov 08 13:27:36 2019
+Quartus II 64-Bit Version : 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition
+Revision Name : berranteiro
+Top-level Entity Name : berranteiro
+Family : Cyclone II
+Total logic elements : 58
+    Total combinational functions : 58
+    Dedicated logic registers : 9
+Total registers : 9
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

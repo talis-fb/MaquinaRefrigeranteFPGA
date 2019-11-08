@@ -1,0 +1,1677 @@
+TimeQuest Timing Analyzer report for berranteiro
+Fri Nov 08 13:28:05 2019
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'fstate.entregaComTroco'
+ 12. Slow Model Setup: 'reset'
+ 13. Slow Model Setup: 'clock'
+ 14. Slow Model Hold: 'reset'
+ 15. Slow Model Hold: 'fstate.entregaComTroco'
+ 16. Slow Model Hold: 'clock'
+ 17. Slow Model Recovery: 'fstate.entregaComTroco'
+ 18. Slow Model Removal: 'fstate.entregaComTroco'
+ 19. Slow Model Minimum Pulse Width: 'clock'
+ 20. Slow Model Minimum Pulse Width: 'reset'
+ 21. Slow Model Minimum Pulse Width: 'fstate.entregaComTroco'
+ 22. Setup Times
+ 23. Hold Times
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Fast Model Setup Summary
+ 27. Fast Model Hold Summary
+ 28. Fast Model Recovery Summary
+ 29. Fast Model Removal Summary
+ 30. Fast Model Minimum Pulse Width Summary
+ 31. Fast Model Setup: 'fstate.entregaComTroco'
+ 32. Fast Model Setup: 'reset'
+ 33. Fast Model Setup: 'clock'
+ 34. Fast Model Hold: 'reset'
+ 35. Fast Model Hold: 'fstate.entregaComTroco'
+ 36. Fast Model Hold: 'clock'
+ 37. Fast Model Recovery: 'fstate.entregaComTroco'
+ 38. Fast Model Removal: 'fstate.entregaComTroco'
+ 39. Fast Model Minimum Pulse Width: 'clock'
+ 40. Fast Model Minimum Pulse Width: 'reset'
+ 41. Fast Model Minimum Pulse Width: 'fstate.entregaComTroco'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Multicorner Timing Analysis Summary
+ 47. Setup Times
+ 48. Hold Times
+ 49. Clock to Output Times
+ 50. Minimum Clock to Output Times
+ 51. Setup Transfers
+ 52. Hold Transfers
+ 53. Recovery Transfers
+ 54. Removal Transfers
+ 55. Report TCCS
+ 56. Report RSKM
+ 57. Unconstrained Paths
+ 58. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; berranteiro                                                     ;
+; Device Family      ; Cyclone II                                                      ;
+; Device Name        ; EP2C35F672C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Combined                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                         ;
++------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
+; Clock Name             ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                    ;
++------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
+; clock                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }                  ;
+; fstate.entregaComTroco ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fstate.entregaComTroco } ;
+; reset                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { reset }                  ;
++------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                               ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                                          ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; 104.36 MHz ; 104.36 MHz      ; fstate.entregaComTroco ;                                                               ;
+; 443.85 MHz ; 420.17 MHz      ; reset                  ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------+
+; Slow Model Setup Summary                        ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; fstate.entregaComTroco ; -4.891 ; -33.264       ;
+; reset                  ; -1.253 ; -5.646        ;
+; clock                  ; -0.702 ; -1.008        ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Slow Model Hold Summary                         ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; reset                  ; -4.049 ; -11.691       ;
+; fstate.entregaComTroco ; -3.225 ; -4.960        ;
+; clock                  ; 0.172  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Slow Model Recovery Summary                     ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; fstate.entregaComTroco ; -0.361 ; -0.545        ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Slow Model Removal Summary                      ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; fstate.entregaComTroco ; -1.330 ; -11.286       ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary          ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; clock                  ; -1.380 ; -10.380       ;
+; reset                  ; -1.380 ; -1.380        ;
+; fstate.entregaComTroco ; 0.500  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'fstate.entregaComTroco'                                                                                                                  ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                        ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; -4.891 ; pMeta[1]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.989     ; 1.989      ;
+; -4.714 ; pMeta[0]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.988     ; 1.813      ;
+; -4.615 ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.745     ; 1.957      ;
+; -4.513 ; pMeta[2]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.885     ; 2.215      ;
+; -4.438 ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.372     ; 2.153      ;
+; -4.382 ; pMeta[1]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.885     ; 2.084      ;
+; -4.360 ; pnow[1]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.641     ; 2.306      ;
+; -4.291 ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.921     ; 1.957      ;
+; -4.272 ; pMeta[2]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.885     ; 2.232      ;
+; -4.253 ; pnow[2]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.640     ; 2.200      ;
+; -4.205 ; pMeta[0]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.884     ; 1.908      ;
+; -4.200 ; pnow[0]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.268     ; 2.519      ;
+; -4.141 ; pMeta[1]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.885     ; 2.101      ;
+; -4.134 ; pMeta[2]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.989     ; 1.232      ;
+; -4.119 ; pnow[1]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.641     ; 2.323      ;
+; -4.036 ; pnow[1]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.817     ; 2.306      ;
+; -4.012 ; pnow[2]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.640     ; 2.217      ;
+; -3.964 ; pMeta[0]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.884     ; 1.925      ;
+; -3.959 ; pnow[0]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.268     ; 2.536      ;
+; -3.929 ; pnow[2]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.816     ; 2.200      ;
+; -3.866 ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.744     ; 1.209      ;
+; -3.858 ; pMeta[2]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.879     ; 2.040      ;
+; -3.795 ; pnow[1]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.817     ; 2.323      ;
+; -3.688 ; pnow[2]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.816     ; 2.217      ;
+; -3.668 ; pMeta[1]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.879     ; 1.850      ;
+; -3.542 ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.920     ; 1.209      ;
+; -3.491 ; pMeta[0]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.878     ; 1.674      ;
+; -3.489 ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.634     ; 1.916      ;
+; -3.392 ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.635     ; 1.818      ;
+; -3.342 ; pnow[0]                ; pnow[0]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -1.893     ; 0.815      ;
+; -3.215 ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.262     ; 2.014      ;
+; -3.165 ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.810     ; 1.916      ;
+; -3.068 ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.811     ; 1.818      ;
+; -3.045 ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.521      ; 2.153      ;
+; -2.807 ; pnow[0]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.625      ; 2.519      ;
+; -2.703 ; fstate.maisHalf1       ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.368      ; 2.158      ;
+; -2.577 ; carry[0]               ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.721     ; 1.393      ;
+; -2.566 ; pnow[0]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.625      ; 2.536      ;
+; -2.475 ; carry[1]               ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.861     ; 1.142      ;
+; -2.445 ; fstate.start4          ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.354      ; 1.739      ;
+; -2.419 ; fstate.maisOne1        ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.368      ; 1.874      ;
+; -2.178 ; fstate.maisHalf1       ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.472      ; 2.237      ;
+; -2.173 ; fstate.start1          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.473      ; 2.233      ;
+; -2.144 ; fstate.start3          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.474      ; 2.205      ;
+; -2.128 ; pnow[2]                ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.824     ; 0.832      ;
+; -2.102 ; pnow[1]                ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.824     ; 0.815      ;
+; -2.047 ; fstate.start2          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.474      ; 2.108      ;
+; -2.025 ; fstate.entregaSemTroco ; pnow[0]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; -0.151     ; 1.240      ;
+; -2.011 ; fstate.start4          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.473      ; 2.071      ;
+; -1.932 ; fstate.maisHalf1       ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.472      ; 2.249      ;
+; -1.927 ; fstate.start1          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.473      ; 2.245      ;
+; -1.898 ; fstate.start3          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.474      ; 2.217      ;
+; -1.822 ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.631      ; 2.014      ;
+; -1.801 ; fstate.start2          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.474      ; 2.120      ;
+; -1.798 ; fstate.principio       ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 1.134      ; 1.872      ;
+; -1.798 ; fstate.maisOne1        ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.472      ; 1.857      ;
+; -1.765 ; fstate.start4          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.473      ; 2.083      ;
+; -1.725 ; fstate.maisHalf1       ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.478      ; 2.264      ;
+; -1.640 ; fstate.start2          ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.368      ; 2.329      ;
+; -1.552 ; fstate.maisOne1        ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.472      ; 1.869      ;
+; -1.504 ; fstate.start3          ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.369      ; 1.861      ;
+; -1.441 ; fstate.maisOne1        ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.478      ; 1.980      ;
+; -1.066 ; fstate.start1          ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.355      ; 1.559      ;
+; -0.949 ; pnow[0]                ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 0.000      ; 0.815      ;
+; -0.863 ; fstate.principio       ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 1.148      ; 1.999      ;
+; -0.804 ; pnow[2]                ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 0.000      ; 0.832      ;
+; -0.778 ; pnow[1]                ; pnow[1]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 0.000      ; 0.815      ;
+; -0.681 ; fstate.principio       ; reg_fstate.principio_455       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 1.258      ; 2.269      ;
+; -0.675 ; fstate.principio       ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 1.147      ; 2.143      ;
+; -0.619 ; fstate.maisOne1        ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; 1.289      ; 1.445      ;
+; -0.599 ; fstate.maisHalf1       ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; 1.289      ; 1.425      ;
+; -0.585 ; fstate.entregaSemTroco ; pnow[2]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; 1.290      ; 1.403      ;
+; -0.159 ; fstate.principio       ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 1.135      ; 1.432      ;
+; 1.101  ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 3.303      ; 1.818      ;
+; 1.601  ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 3.303      ; 1.818      ;
+; 2.753  ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 4.744      ; 1.769      ;
+; 3.253  ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 4.744      ; 1.769      ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'reset'                                                                                                  ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node  ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; -1.253 ; carry[0]               ; pnow[1]  ; reset                  ; reset       ; 1.000        ; 0.103      ; 1.393      ;
+; -1.232 ; carry[0]               ; carry[1] ; reset                  ; reset       ; 1.000        ; 0.139      ; 1.400      ;
+; -1.151 ; carry[1]               ; pnow[2]  ; reset                  ; reset       ; 1.000        ; -0.037     ; 1.142      ;
+; -1.061 ; pnow[0]                ; carry[0] ; reset                  ; reset       ; 1.000        ; 0.270      ; 1.355      ;
+; -0.949 ; pnow[0]                ; pnow[0]  ; reset                  ; reset       ; 1.000        ; 0.000      ; 0.815      ;
+; -0.804 ; pnow[2]                ; pnow[2]  ; reset                  ; reset       ; 1.000        ; 0.000      ; 0.832      ;
+; -0.778 ; pnow[1]                ; pnow[1]  ; reset                  ; reset       ; 1.000        ; 0.000      ; 0.815      ;
+; -0.760 ; pnow[1]                ; carry[1] ; reset                  ; reset       ; 1.000        ; 0.036      ; 0.825      ;
+; -0.480 ; pnow[2]                ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 0.824      ; 0.832      ;
+; -0.454 ; pnow[1]                ; pnow[1]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 0.824      ; 0.815      ;
+; -0.436 ; pnow[1]                ; carry[1] ; fstate.entregaComTroco ; reset       ; 0.500        ; 0.860      ; 0.825      ;
+; 0.332  ; pnow[0]                ; carry[0] ; fstate.entregaComTroco ; reset       ; 0.500        ; 2.163      ; 1.355      ;
+; 0.368  ; fstate.entregaSemTroco ; pnow[0]  ; clock                  ; reset       ; 1.000        ; 1.742      ; 1.240      ;
+; 0.444  ; pnow[0]                ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 1.893      ; 0.815      ;
+; 0.493  ; fstate.maisHalf1       ; carry[0] ; clock                  ; reset       ; 1.000        ; 2.010      ; 1.541      ;
+; 0.564  ; fstate.start2          ; pMeta[1] ; clock                  ; reset       ; 1.000        ; 2.359      ; 1.509      ;
+; 0.649  ; fstate.start3          ; pMeta[0] ; clock                  ; reset       ; 1.000        ; 2.358      ; 2.027      ;
+; 0.705  ; fstate.maisOne1        ; pnow[1]  ; clock                  ; reset       ; 1.000        ; 2.113      ; 1.445      ;
+; 0.725  ; fstate.maisHalf1       ; pnow[1]  ; clock                  ; reset       ; 1.000        ; 2.113      ; 1.425      ;
+; 0.739  ; fstate.entregaSemTroco ; pnow[2]  ; clock                  ; reset       ; 1.000        ; 2.114      ; 1.403      ;
+; 0.750  ; fstate.start2          ; pMeta[0] ; clock                  ; reset       ; 1.000        ; 2.358      ; 1.926      ;
+; 0.769  ; fstate.maisHalf1       ; carry[1] ; clock                  ; reset       ; 1.000        ; 2.149      ; 1.409      ;
+; 0.778  ; fstate.start4          ; pMeta[2] ; clock                  ; reset       ; 1.000        ; 2.358      ; 1.710      ;
+; 0.965  ; fstate.start3          ; pMeta[2] ; clock                  ; reset       ; 1.000        ; 2.359      ; 1.524      ;
+; 2.994  ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 5.196      ; 1.818      ;
+; 3.494  ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 1.000        ; 5.196      ; 1.818      ;
+; 3.577  ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 5.568      ; 1.769      ;
+; 4.077  ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 1.000        ; 5.568      ; 1.769      ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                                                        ;
++--------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; -0.702 ; reg_fstate.principio_455       ; fstate.principio       ; fstate.entregaComTroco ; clock       ; 1.000        ; -1.258     ; 0.480      ;
+; -0.306 ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; clock       ; 1.000        ; -1.258     ; 0.084      ;
+; 0.480  ; reg_fstate.maisHalf1_443       ; fstate.maisHalf1       ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.472     ; 0.084      ;
+; 0.480  ; reg_fstate.maisOne1_449        ; fstate.maisOne1        ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.472     ; 0.084      ;
+; 0.582  ; reg_fstate.entregaSemTroco_407 ; fstate.entregaSemTroco ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.370     ; 0.084      ;
+; 0.583  ; reg_fstate.start3_425          ; fstate.start3          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.369     ; 0.084      ;
+; 0.584  ; reg_fstate.start2_431          ; fstate.start2          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.368     ; 0.084      ;
+; 0.597  ; reg_fstate.start1_437          ; fstate.start1          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.355     ; 0.084      ;
+; 0.598  ; reg_fstate.start4_419          ; fstate.start4          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.354     ; 0.084      ;
++--------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'reset'                                                                                                   ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node  ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; -4.049 ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 0.000        ; 5.568      ; 1.769      ;
+; -3.628 ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 0.000        ; 5.196      ; 1.818      ;
+; -3.549 ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 5.568      ; 1.769      ;
+; -3.128 ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 5.196      ; 1.818      ;
+; -0.850 ; fstate.start2          ; pMeta[1] ; clock                  ; reset       ; 0.000        ; 2.359      ; 1.509      ;
+; -0.835 ; fstate.start3          ; pMeta[2] ; clock                  ; reset       ; 0.000        ; 2.359      ; 1.524      ;
+; -0.740 ; fstate.maisHalf1       ; carry[1] ; clock                  ; reset       ; 0.000        ; 2.149      ; 1.409      ;
+; -0.711 ; fstate.entregaSemTroco ; pnow[2]  ; clock                  ; reset       ; 0.000        ; 2.114      ; 1.403      ;
+; -0.688 ; fstate.maisHalf1       ; pnow[1]  ; clock                  ; reset       ; 0.000        ; 2.113      ; 1.425      ;
+; -0.668 ; fstate.maisOne1        ; pnow[1]  ; clock                  ; reset       ; 0.000        ; 2.113      ; 1.445      ;
+; -0.648 ; fstate.start4          ; pMeta[2] ; clock                  ; reset       ; 0.000        ; 2.358      ; 1.710      ;
+; -0.578 ; pnow[0]                ; pnow[0]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 1.893      ; 0.815      ;
+; -0.502 ; fstate.entregaSemTroco ; pnow[0]  ; clock                  ; reset       ; 0.000        ; 1.742      ; 1.240      ;
+; -0.469 ; fstate.maisHalf1       ; carry[0] ; clock                  ; reset       ; 0.000        ; 2.010      ; 1.541      ;
+; -0.432 ; fstate.start2          ; pMeta[0] ; clock                  ; reset       ; 0.000        ; 2.358      ; 1.926      ;
+; -0.331 ; fstate.start3          ; pMeta[0] ; clock                  ; reset       ; 0.000        ; 2.358      ; 2.027      ;
+; -0.308 ; pnow[0]                ; carry[0] ; fstate.entregaComTroco ; reset       ; -0.500       ; 2.163      ; 1.355      ;
+; 0.465  ; pnow[1]                ; carry[1] ; fstate.entregaComTroco ; reset       ; -0.500       ; 0.860      ; 0.825      ;
+; 0.491  ; pnow[1]                ; pnow[1]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 0.824      ; 0.815      ;
+; 0.508  ; pnow[2]                ; pnow[2]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 0.824      ; 0.832      ;
+; 0.789  ; pnow[1]                ; carry[1] ; reset                  ; reset       ; 0.000        ; 0.036      ; 0.825      ;
+; 0.815  ; pnow[1]                ; pnow[1]  ; reset                  ; reset       ; 0.000        ; 0.000      ; 0.815      ;
+; 0.815  ; pnow[0]                ; pnow[0]  ; reset                  ; reset       ; 0.000        ; 0.000      ; 0.815      ;
+; 0.832  ; pnow[2]                ; pnow[2]  ; reset                  ; reset       ; 0.000        ; 0.000      ; 0.832      ;
+; 1.085  ; pnow[0]                ; carry[0] ; reset                  ; reset       ; 0.000        ; 0.270      ; 1.355      ;
+; 1.179  ; carry[1]               ; pnow[2]  ; reset                  ; reset       ; 0.000        ; -0.037     ; 1.142      ;
+; 1.261  ; carry[0]               ; carry[1] ; reset                  ; reset       ; 0.000        ; 0.139      ; 1.400      ;
+; 1.290  ; carry[0]               ; pnow[1]  ; reset                  ; reset       ; 0.000        ; 0.103      ; 1.393      ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'fstate.entregaComTroco'                                                                                                                   ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                        ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; -3.225 ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 4.744      ; 1.769      ;
+; -2.725 ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 4.744      ; 1.769      ;
+; -1.735 ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 3.303      ; 1.818      ;
+; -1.235 ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 3.303      ; 1.818      ;
+; 0.297  ; fstate.principio       ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 1.135      ; 1.432      ;
+; 0.613  ; fstate.entregaSemTroco ; pnow[2]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; 1.290      ; 1.403      ;
+; 0.636  ; fstate.maisHalf1       ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; 1.289      ; 1.425      ;
+; 0.656  ; fstate.maisOne1        ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; 1.289      ; 1.445      ;
+; 0.738  ; fstate.principio       ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 1.134      ; 1.872      ;
+; 0.815  ; pnow[1]                ; pnow[1]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 0.000      ; 0.815      ;
+; 0.815  ; pnow[0]                ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 0.000      ; 0.815      ;
+; 0.832  ; pnow[2]                ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 0.000      ; 0.832      ;
+; 0.851  ; fstate.principio       ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 1.148      ; 1.999      ;
+; 0.973  ; fstate.maisHalf1       ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.472      ; 1.445      ;
+; 0.986  ; fstate.maisOne1        ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.472      ; 1.458      ;
+; 0.996  ; fstate.principio       ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 1.147      ; 2.143      ;
+; 1.011  ; fstate.principio       ; reg_fstate.principio_455       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 1.258      ; 2.269      ;
+; 1.204  ; fstate.start1          ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.355      ; 1.559      ;
+; 1.385  ; fstate.start4          ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.354      ; 1.739      ;
+; 1.397  ; fstate.maisOne1        ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.472      ; 1.869      ;
+; 1.492  ; fstate.start3          ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.369      ; 1.861      ;
+; 1.502  ; fstate.maisOne1        ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.478      ; 1.980      ;
+; 1.506  ; fstate.maisOne1        ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.368      ; 1.874      ;
+; 1.598  ; fstate.start4          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.473      ; 2.071      ;
+; 1.610  ; fstate.start4          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.473      ; 2.083      ;
+; 1.634  ; fstate.start2          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.474      ; 2.108      ;
+; 1.646  ; fstate.start2          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.474      ; 2.120      ;
+; 1.731  ; fstate.start3          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.474      ; 2.205      ;
+; 1.743  ; fstate.start3          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.474      ; 2.217      ;
+; 1.760  ; fstate.start1          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.473      ; 2.233      ;
+; 1.765  ; fstate.maisHalf1       ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.472      ; 2.237      ;
+; 1.766  ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.631      ; 1.897      ;
+; 1.772  ; fstate.start1          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.473      ; 2.245      ;
+; 1.786  ; fstate.maisHalf1       ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.478      ; 2.264      ;
+; 1.790  ; fstate.maisHalf1       ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.368      ; 2.158      ;
+; 1.891  ; fstate.entregaSemTroco ; pnow[0]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; -0.151     ; 1.240      ;
+; 1.961  ; fstate.start2          ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.368      ; 2.329      ;
+; 2.123  ; pnow[0]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.625      ; 2.248      ;
+; 2.132  ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.521      ; 2.153      ;
+; 2.139  ; pnow[1]                ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.824     ; 0.815      ;
+; 2.140  ; pnow[0]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.625      ; 2.265      ;
+; 2.156  ; pnow[2]                ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.824     ; 0.832      ;
+; 2.503  ; carry[1]               ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.861     ; 1.142      ;
+; 2.614  ; carry[0]               ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.721     ; 1.393      ;
+; 2.629  ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.920     ; 1.209      ;
+; 2.888  ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.810     ; 1.578      ;
+; 2.953  ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.744     ; 1.209      ;
+; 2.995  ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.811     ; 1.684      ;
+; 3.159  ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.262     ; 1.897      ;
+; 3.208  ; pnow[0]                ; pnow[0]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -1.893     ; 0.815      ;
+; 3.212  ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.634     ; 1.578      ;
+; 3.221  ; pMeta[2]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.989     ; 1.232      ;
+; 3.319  ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.635     ; 1.684      ;
+; 3.369  ; pnow[1]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.817     ; 2.052      ;
+; 3.378  ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.921     ; 1.957      ;
+; 3.386  ; pnow[1]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.817     ; 2.069      ;
+; 3.407  ; pnow[2]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.816     ; 2.091      ;
+; 3.424  ; pnow[2]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.816     ; 2.108      ;
+; 3.516  ; pnow[0]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.268     ; 2.248      ;
+; 3.525  ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.372     ; 2.153      ;
+; 3.533  ; pnow[0]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.268     ; 2.265      ;
+; 3.552  ; pMeta[0]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.878     ; 1.674      ;
+; 3.693  ; pnow[1]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.641     ; 2.052      ;
+; 3.702  ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.745     ; 1.957      ;
+; 3.710  ; pnow[1]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.641     ; 2.069      ;
+; 3.729  ; pMeta[1]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.879     ; 1.850      ;
+; 3.731  ; pnow[2]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.640     ; 2.091      ;
+; 3.748  ; pnow[2]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.640     ; 2.108      ;
+; 3.792  ; pMeta[0]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.884     ; 1.908      ;
+; 3.801  ; pMeta[0]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.988     ; 1.813      ;
+; 3.809  ; pMeta[0]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.884     ; 1.925      ;
+; 3.919  ; pMeta[2]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.879     ; 2.040      ;
+; 3.969  ; pMeta[1]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.885     ; 2.084      ;
+; 3.978  ; pMeta[1]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.989     ; 1.989      ;
+; 3.986  ; pMeta[1]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.885     ; 2.101      ;
+; 4.100  ; pMeta[2]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.885     ; 2.215      ;
+; 4.117  ; pMeta[2]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.885     ; 2.232      ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                        ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; 0.172 ; reg_fstate.start4_419          ; fstate.start4          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.354     ; 0.084      ;
+; 0.173 ; reg_fstate.start1_437          ; fstate.start1          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.355     ; 0.084      ;
+; 0.186 ; reg_fstate.start2_431          ; fstate.start2          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.368     ; 0.084      ;
+; 0.187 ; reg_fstate.start3_425          ; fstate.start3          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.369     ; 0.084      ;
+; 0.188 ; reg_fstate.entregaSemTroco_407 ; fstate.entregaSemTroco ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.370     ; 0.084      ;
+; 0.290 ; reg_fstate.maisHalf1_443       ; fstate.maisHalf1       ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.472     ; 0.084      ;
+; 0.290 ; reg_fstate.maisOne1_449        ; fstate.maisOne1        ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.472     ; 0.084      ;
+; 1.076 ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; clock       ; 0.000        ; -1.258     ; 0.084      ;
+; 1.472 ; reg_fstate.principio_455       ; fstate.principio       ; fstate.entregaComTroco ; clock       ; 0.000        ; -1.258     ; 0.480      ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'fstate.entregaComTroco'                                                                                        ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                        ; Launch Clock ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; -0.361 ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.809      ; 2.610      ;
+; -0.184 ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.824      ; 2.595      ;
+; 0.139  ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.809      ; 2.610      ;
+; 0.316  ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.824      ; 2.595      ;
+; 0.417  ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.928      ; 2.598      ;
+; 0.675  ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.928      ; 2.598      ;
+; 0.680  ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.823      ; 2.631      ;
+; 0.840  ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.810      ; 2.608      ;
+; 0.861  ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.934      ; 2.634      ;
+; 0.917  ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.928      ; 2.598      ;
+; 1.046  ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.822      ; 2.597      ;
+; 1.109  ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; 0.500        ; 3.933      ; 2.654      ;
+; 1.175  ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.928      ; 2.598      ;
+; 1.180  ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.823      ; 2.631      ;
+; 1.340  ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.810      ; 2.608      ;
+; 1.361  ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.934      ; 2.634      ;
+; 1.546  ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.822      ; 2.597      ;
+; 1.609  ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; 1.000        ; 3.933      ; 2.654      ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'fstate.entregaComTroco'                                                                                         ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                        ; Launch Clock ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; -1.330 ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.928      ; 2.598      ;
+; -1.330 ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.928      ; 2.598      ;
+; -1.300 ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.934      ; 2.634      ;
+; -1.279 ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.933      ; 2.654      ;
+; -1.229 ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.824      ; 2.595      ;
+; -1.225 ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.822      ; 2.597      ;
+; -1.202 ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.810      ; 2.608      ;
+; -1.199 ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.809      ; 2.610      ;
+; -1.192 ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; 0.000        ; 3.823      ; 2.631      ;
+; -0.830 ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.928      ; 2.598      ;
+; -0.830 ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.928      ; 2.598      ;
+; -0.800 ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.934      ; 2.634      ;
+; -0.779 ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.933      ; 2.654      ;
+; -0.729 ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.824      ; 2.595      ;
+; -0.725 ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.822      ; 2.597      ;
+; -0.702 ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.810      ; 2.608      ;
+; -0.699 ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.809      ; 2.610      ;
+; -0.692 ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; -0.500       ; 3.823      ; 2.631      ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaComTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaComTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaSemTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaSemTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisHalf1           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisHalf1           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisOne1            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisOne1            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.principio           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.principio           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start1              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start1              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start2              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start2              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start3              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start3              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start4              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start4              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaComTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaComTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaSemTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaSemTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisHalf1|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisHalf1|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisOne1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisOne1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.principio|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.principio|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start1|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start1|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start2|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start2|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start3|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start3|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start4|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start4|clk          ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'reset'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; reset ; Rise       ; reset                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]|datac             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]|datac             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[1]|datab             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[1]|datab             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[1]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[1]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[2]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[2]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]~3|datab            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]~3|datab            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[2]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[2]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[2]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[2]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset|combout              ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'fstate.entregaComTroco'                                                                              ;
++-------+--------------+----------------+------------------+------------------------+------------+--------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                  ; Clock Edge ; Target                               ;
++-------+--------------+----------------+------------------+------------------------+------------+--------------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; fstate.entregaComTroco|regout        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; fstate.entregaComTroco|regout        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[0]                              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[0]                              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[0]|datab                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[0]|datab                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[0]~3|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[0]~3|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; pnow[0]~3|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; pnow[0]~3|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]                              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]                              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|inclk[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|inclk[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|outclk              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|outclk              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[2]                              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[2]                              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[2]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[2]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|inclk[0]               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|inclk[0]               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|outclk                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|outclk                 ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow~2|combout                       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow~2|combout                       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; pnow~2|datac                         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; pnow~2|datac                         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaComTroco_413       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaComTroco_413       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaComTroco_413|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaComTroco_413|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaSemTroco_407       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaSemTroco_407       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaSemTroco_407|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaSemTroco_407|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisHalf1_443             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisHalf1_443             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisHalf1_443|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisHalf1_443|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisOne1_449              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisOne1_449              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisOne1_449|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisOne1_449|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.principio_455             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.principio_455             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.principio_455|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.principio_455|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start1_437                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start1_437                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start1_437|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start1_437|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start2_431                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start2_431                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start2_431|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start2_431|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start3_425                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start3_425                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start3_425|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start3_425|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start4_419                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start4_419                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start4_419|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start4_419|datad          ;
++-------+--------------+----------------+------------------+------------------------+------------+--------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Setup Times                                                                              ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; B1        ; fstate.entregaComTroco ; 2.350 ; 2.350 ; Rise       ; fstate.entregaComTroco ;
+; B2        ; fstate.entregaComTroco ; 5.694 ; 5.694 ; Rise       ; fstate.entregaComTroco ;
+; B3        ; fstate.entregaComTroco ; 5.728 ; 5.728 ; Rise       ; fstate.entregaComTroco ;
+; B4        ; fstate.entregaComTroco ; 5.472 ; 5.472 ; Rise       ; fstate.entregaComTroco ;
+; butHalf   ; fstate.entregaComTroco ; 6.142 ; 6.142 ; Rise       ; fstate.entregaComTroco ;
+; butOne    ; fstate.entregaComTroco ; 6.263 ; 6.263 ; Rise       ; fstate.entregaComTroco ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Hold Times                                                                                 ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; B1        ; fstate.entregaComTroco ; -0.223 ; -0.223 ; Rise       ; fstate.entregaComTroco ;
+; B2        ; fstate.entregaComTroco ; -3.198 ; -3.198 ; Rise       ; fstate.entregaComTroco ;
+; B3        ; fstate.entregaComTroco ; -3.668 ; -3.668 ; Rise       ; fstate.entregaComTroco ;
+; B4        ; fstate.entregaComTroco ; -3.361 ; -3.361 ; Rise       ; fstate.entregaComTroco ;
+; butHalf   ; fstate.entregaComTroco ; -3.740 ; -3.740 ; Rise       ; fstate.entregaComTroco ;
+; butOne    ; fstate.entregaComTroco ; -3.607 ; -3.607 ; Rise       ; fstate.entregaComTroco ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; r1        ; clock      ; 8.394 ; 8.394 ; Rise       ; clock           ;
+; r2        ; clock      ; 8.627 ; 8.627 ; Rise       ; clock           ;
+; r3        ; clock      ; 8.634 ; 8.634 ; Rise       ; clock           ;
+; r4        ; clock      ; 8.644 ; 8.644 ; Rise       ; clock           ;
+; r1        ; reset      ; 7.170 ; 7.170 ; Rise       ; reset           ;
+; r2        ; reset      ; 6.097 ; 6.097 ; Rise       ; reset           ;
+; r3        ; reset      ; 6.382 ; 6.382 ; Rise       ; reset           ;
+; r4        ; reset      ; 6.159 ; 6.159 ; Rise       ; reset           ;
+; r1        ; reset      ; 7.170 ; 7.170 ; Fall       ; reset           ;
+; r2        ; reset      ; 6.097 ; 6.097 ; Fall       ; reset           ;
+; r3        ; reset      ; 6.382 ; 6.382 ; Fall       ; reset           ;
+; r4        ; reset      ; 6.159 ; 6.159 ; Fall       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; r1        ; clock      ; 8.394 ; 8.394 ; Rise       ; clock           ;
+; r2        ; clock      ; 8.627 ; 8.627 ; Rise       ; clock           ;
+; r3        ; clock      ; 8.634 ; 8.634 ; Rise       ; clock           ;
+; r4        ; clock      ; 8.644 ; 8.644 ; Rise       ; clock           ;
+; r1        ; reset      ; 7.170 ; 7.170 ; Rise       ; reset           ;
+; r2        ; reset      ; 6.097 ; 6.097 ; Rise       ; reset           ;
+; r3        ; reset      ; 6.382 ; 6.382 ; Rise       ; reset           ;
+; r4        ; reset      ; 6.159 ; 6.159 ; Rise       ; reset           ;
+; r1        ; reset      ; 7.170 ; 7.170 ; Fall       ; reset           ;
+; r2        ; reset      ; 6.097 ; 6.097 ; Fall       ; reset           ;
+; r3        ; reset      ; 6.382 ; 6.382 ; Fall       ; reset           ;
+; r4        ; reset      ; 6.159 ; 6.159 ; Fall       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------+
+; Fast Model Setup Summary                        ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; fstate.entregaComTroco ; -1.724 ; -9.988        ;
+; reset                  ; 0.057  ; 0.000         ;
+; clock                  ; 0.417  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Fast Model Hold Summary                         ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; reset                  ; -2.221 ; -6.517        ;
+; fstate.entregaComTroco ; -1.696 ; -2.463        ;
+; clock                  ; 0.053  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Fast Model Recovery Summary                    ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; fstate.entregaComTroco ; 0.258 ; 0.000         ;
++------------------------+-------+---------------+
+
+
++-------------------------------------------------+
+; Fast Model Removal Summary                      ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; fstate.entregaComTroco ; -0.717 ; -6.219        ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary          ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; clock                  ; -1.380 ; -10.380       ;
+; reset                  ; -1.380 ; -1.380        ;
+; fstate.entregaComTroco ; 0.500  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'fstate.entregaComTroco'                                                                                                                  ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                        ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; -1.724 ; pMeta[1]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.032     ; 0.851      ;
+; -1.662 ; pMeta[0]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.030     ; 0.791      ;
+; -1.607 ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.913     ; 0.853      ;
+; -1.582 ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.388     ; 0.853      ;
+; -1.520 ; pMeta[2]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.999     ; 0.925      ;
+; -1.466 ; pnow[1]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.881     ; 0.989      ;
+; -1.464 ; pMeta[1]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.000     ; 0.868      ;
+; -1.441 ; pnow[1]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.356     ; 0.989      ;
+; -1.410 ; pnow[2]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.879     ; 0.935      ;
+; -1.409 ; pMeta[2]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.999     ; 0.933      ;
+; -1.404 ; pMeta[2]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.031     ; 0.532      ;
+; -1.402 ; pMeta[0]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.998     ; 0.808      ;
+; -1.385 ; pnow[2]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.354     ; 0.935      ;
+; -1.370 ; pnow[0]                ; pnow[0]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -1.044     ; 0.342      ;
+; -1.355 ; pnow[1]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.881     ; 0.997      ;
+; -1.353 ; pMeta[1]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -1.000     ; 0.876      ;
+; -1.330 ; pnow[1]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.356     ; 0.997      ;
+; -1.299 ; pnow[2]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.879     ; 0.943      ;
+; -1.291 ; pMeta[0]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.998     ; 0.816      ;
+; -1.289 ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.501     ; 0.947      ;
+; -1.275 ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.911     ; 0.523      ;
+; -1.274 ; pnow[2]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.354     ; 0.943      ;
+; -1.254 ; pMeta[2]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.995     ; 0.872      ;
+; -1.250 ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.386     ; 0.523      ;
+; -1.151 ; pMeta[1]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.996     ; 0.768      ;
+; -1.144 ; pnow[0]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.469     ; 1.079      ;
+; -1.089 ; pMeta[0]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.994     ; 0.708      ;
+; -1.087 ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.875     ; 0.825      ;
+; -1.062 ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.350     ; 0.825      ;
+; -1.034 ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.877     ; 0.770      ;
+; -1.033 ; pnow[0]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.469     ; 1.087      ;
+; -1.009 ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; -0.352     ; 0.770      ;
+; -0.968 ; carry[0]               ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.472     ; 0.597      ;
+; -0.946 ; fstate.entregaSemTroco ; pnow[0]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; -0.373     ; 0.589      ;
+; -0.919 ; carry[1]               ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.538     ; 0.478      ;
+; -0.779 ; pnow[2]                ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.525     ; 0.351      ;
+; -0.768 ; pnow[1]                ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; 0.500        ; -0.525     ; 0.344      ;
+; -0.745 ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.543      ; 0.947      ;
+; -0.716 ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 1.000        ; -0.465     ; 0.864      ;
+; -0.645 ; fstate.maisHalf1       ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.170      ; 0.974      ;
+; -0.600 ; pnow[0]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.575      ; 1.079      ;
+; -0.541 ; fstate.start4          ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.163      ; 0.798      ;
+; -0.523 ; fstate.maisOne1        ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.170      ; 0.852      ;
+; -0.489 ; pnow[0]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.575      ; 1.087      ;
+; -0.414 ; fstate.principio       ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.342      ; 0.850      ;
+; -0.404 ; fstate.maisHalf1       ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 1.010      ;
+; -0.403 ; fstate.start1          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.205      ; 1.012      ;
+; -0.396 ; fstate.start3          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 1.002      ;
+; -0.347 ; fstate.start2          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 0.953      ;
+; -0.346 ; fstate.start4          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.205      ; 0.955      ;
+; -0.287 ; fstate.maisHalf1       ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 1.012      ;
+; -0.286 ; fstate.start1          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.205      ; 1.014      ;
+; -0.279 ; fstate.start3          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 1.004      ;
+; -0.238 ; fstate.maisOne1        ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 0.844      ;
+; -0.230 ; fstate.start2          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 0.955      ;
+; -0.229 ; fstate.start4          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.205      ; 0.957      ;
+; -0.218 ; fstate.maisHalf1       ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.206      ; 1.037      ;
+; -0.172 ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 0.579      ; 0.864      ;
+; -0.171 ; fstate.start2          ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.168      ; 1.065      ;
+; -0.121 ; fstate.maisOne1        ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.202      ; 0.846      ;
+; -0.112 ; fstate.start3          ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.168      ; 0.850      ;
+; -0.096 ; fstate.maisOne1        ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.206      ; 0.915      ;
+; -0.009 ; fstate.entregaSemTroco ; pnow[2]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; 0.556      ; 0.662      ;
+; -0.008 ; fstate.maisOne1        ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; 0.558      ; 0.667      ;
+; -0.005 ; fstate.maisHalf1       ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; 0.500        ; 0.558      ; 0.664      ;
+; 0.025  ; fstate.principio       ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.350      ; 0.895      ;
+; 0.083  ; fstate.principio       ; reg_fstate.principio_455       ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.388      ; 1.034      ;
+; 0.096  ; fstate.start1          ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.164      ; 0.714      ;
+; 0.114  ; fstate.principio       ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.350      ; 0.962      ;
+; 0.174  ; pnow[0]                ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 0.000      ; 0.342      ;
+; 0.246  ; pnow[2]                ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 0.000      ; 0.351      ;
+; 0.257  ; pnow[1]                ; pnow[1]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 0.000      ; 0.344      ;
+; 0.325  ; fstate.principio       ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 1.000        ; 0.343      ; 0.664      ;
+; 0.783  ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 1.458      ; 0.832      ;
+; 1.283  ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 1.458      ; 0.832      ;
+; 1.793  ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.500        ; 2.387      ; 0.832      ;
+; 2.293  ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 1.000        ; 2.387      ; 0.832      ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'reset'                                                                                                 ;
++-------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node  ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; 0.057 ; carry[0]               ; pnow[1]  ; reset                  ; reset       ; 1.000        ; 0.053      ; 0.597      ;
+; 0.058 ; carry[0]               ; carry[1] ; reset                  ; reset       ; 1.000        ; 0.064      ; 0.603      ;
+; 0.106 ; carry[1]               ; pnow[2]  ; reset                  ; reset       ; 1.000        ; -0.013     ; 0.478      ;
+; 0.174 ; pnow[0]                ; pnow[0]  ; reset                  ; reset       ; 1.000        ; 0.000      ; 0.342      ;
+; 0.246 ; pnow[2]                ; pnow[2]  ; reset                  ; reset       ; 1.000        ; 0.000      ; 0.351      ;
+; 0.256 ; pnow[1]                ; carry[1] ; reset                  ; reset       ; 1.000        ; 0.011      ; 0.352      ;
+; 0.257 ; pnow[1]                ; pnow[1]  ; reset                  ; reset       ; 1.000        ; 0.000      ; 0.344      ;
+; 0.271 ; pnow[2]                ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 0.525      ; 0.351      ;
+; 0.281 ; pnow[1]                ; carry[1] ; fstate.entregaComTroco ; reset       ; 0.500        ; 0.536      ; 0.352      ;
+; 0.282 ; pnow[1]                ; pnow[1]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 0.525      ; 0.344      ;
+; 0.359 ; pnow[0]                ; carry[0] ; reset                  ; reset       ; 1.000        ; 0.359      ; 0.602      ;
+; 0.598 ; fstate.entregaSemTroco ; pnow[0]  ; clock                  ; reset       ; 1.000        ; 0.671      ; 0.589      ;
+; 0.718 ; pnow[0]                ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 1.044      ; 0.342      ;
+; 0.903 ; pnow[0]                ; carry[0] ; fstate.entregaComTroco ; reset       ; 0.500        ; 1.403      ; 0.602      ;
+; 0.916 ; fstate.maisHalf1       ; carry[0] ; clock                  ; reset       ; 1.000        ; 1.030      ; 0.716      ;
+; 0.957 ; fstate.start2          ; pMeta[1] ; clock                  ; reset       ; 1.000        ; 1.202      ; 0.698      ;
+; 1.004 ; fstate.start3          ; pMeta[0] ; clock                  ; reset       ; 1.000        ; 1.200      ; 0.917      ;
+; 1.016 ; fstate.entregaSemTroco ; pnow[2]  ; clock                  ; reset       ; 1.000        ; 1.081      ; 0.662      ;
+; 1.017 ; fstate.maisOne1        ; pnow[1]  ; clock                  ; reset       ; 1.000        ; 1.083      ; 0.667      ;
+; 1.020 ; fstate.maisHalf1       ; pnow[1]  ; clock                  ; reset       ; 1.000        ; 1.083      ; 0.664      ;
+; 1.022 ; fstate.maisHalf1       ; carry[1] ; clock                  ; reset       ; 1.000        ; 1.094      ; 0.669      ;
+; 1.052 ; fstate.start4          ; pMeta[2] ; clock                  ; reset       ; 1.000        ; 1.204      ; 0.783      ;
+; 1.056 ; fstate.start2          ; pMeta[0] ; clock                  ; reset       ; 1.000        ; 1.200      ; 0.865      ;
+; 1.119 ; fstate.start3          ; pMeta[2] ; clock                  ; reset       ; 1.000        ; 1.201      ; 0.713      ;
+; 1.827 ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 2.502      ; 0.832      ;
+; 2.318 ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 0.500        ; 2.912      ; 0.832      ;
+; 2.327 ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 1.000        ; 2.502      ; 0.832      ;
+; 2.818 ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 1.000        ; 2.912      ; 0.832      ;
++-------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                                                       ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; 0.417 ; reg_fstate.principio_455       ; fstate.principio       ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.388     ; 0.227      ;
+; 0.603 ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.387     ; 0.042      ;
+; 0.788 ; reg_fstate.maisHalf1_443       ; fstate.maisHalf1       ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.202     ; 0.042      ;
+; 0.788 ; reg_fstate.maisOne1_449        ; fstate.maisOne1        ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.202     ; 0.042      ;
+; 0.820 ; reg_fstate.entregaSemTroco_407 ; fstate.entregaSemTroco ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.170     ; 0.042      ;
+; 0.822 ; reg_fstate.start2_431          ; fstate.start2          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.168     ; 0.042      ;
+; 0.822 ; reg_fstate.start3_425          ; fstate.start3          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.168     ; 0.042      ;
+; 0.826 ; reg_fstate.start1_437          ; fstate.start1          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.164     ; 0.042      ;
+; 0.827 ; reg_fstate.start4_419          ; fstate.start4          ; fstate.entregaComTroco ; clock       ; 1.000        ; -0.163     ; 0.042      ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'reset'                                                                                                   ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node  ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+; -2.221 ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; 0.000        ; 2.912      ; 0.832      ;
+; -1.811 ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; 0.000        ; 2.502      ; 0.832      ;
+; -1.721 ; fstate.entregaComTroco ; pnow[2]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 2.912      ; 0.832      ;
+; -1.311 ; fstate.entregaComTroco ; pnow[0]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 2.502      ; 0.832      ;
+; -0.504 ; fstate.start2          ; pMeta[1] ; clock                  ; reset       ; 0.000        ; 1.202      ; 0.698      ;
+; -0.488 ; fstate.start3          ; pMeta[2] ; clock                  ; reset       ; 0.000        ; 1.201      ; 0.713      ;
+; -0.425 ; fstate.maisHalf1       ; carry[1] ; clock                  ; reset       ; 0.000        ; 1.094      ; 0.669      ;
+; -0.421 ; fstate.start4          ; pMeta[2] ; clock                  ; reset       ; 0.000        ; 1.204      ; 0.783      ;
+; -0.419 ; fstate.entregaSemTroco ; pnow[2]  ; clock                  ; reset       ; 0.000        ; 1.081      ; 0.662      ;
+; -0.419 ; fstate.maisHalf1       ; pnow[1]  ; clock                  ; reset       ; 0.000        ; 1.083      ; 0.664      ;
+; -0.416 ; fstate.maisOne1        ; pnow[1]  ; clock                  ; reset       ; 0.000        ; 1.083      ; 0.667      ;
+; -0.335 ; fstate.start2          ; pMeta[0] ; clock                  ; reset       ; 0.000        ; 1.200      ; 0.865      ;
+; -0.314 ; fstate.maisHalf1       ; carry[0] ; clock                  ; reset       ; 0.000        ; 1.030      ; 0.716      ;
+; -0.301 ; pnow[0]                ; carry[0] ; fstate.entregaComTroco ; reset       ; -0.500       ; 1.403      ; 0.602      ;
+; -0.283 ; fstate.start3          ; pMeta[0] ; clock                  ; reset       ; 0.000        ; 1.200      ; 0.917      ;
+; -0.202 ; pnow[0]                ; pnow[0]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 1.044      ; 0.342      ;
+; -0.082 ; fstate.entregaSemTroco ; pnow[0]  ; clock                  ; reset       ; 0.000        ; 0.671      ; 0.589      ;
+; 0.243  ; pnow[0]                ; carry[0] ; reset                  ; reset       ; 0.000        ; 0.359      ; 0.602      ;
+; 0.316  ; pnow[1]                ; carry[1] ; fstate.entregaComTroco ; reset       ; -0.500       ; 0.536      ; 0.352      ;
+; 0.319  ; pnow[1]                ; pnow[1]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 0.525      ; 0.344      ;
+; 0.326  ; pnow[2]                ; pnow[2]  ; fstate.entregaComTroco ; reset       ; -0.500       ; 0.525      ; 0.351      ;
+; 0.341  ; pnow[1]                ; carry[1] ; reset                  ; reset       ; 0.000        ; 0.011      ; 0.352      ;
+; 0.342  ; pnow[0]                ; pnow[0]  ; reset                  ; reset       ; 0.000        ; 0.000      ; 0.342      ;
+; 0.344  ; pnow[1]                ; pnow[1]  ; reset                  ; reset       ; 0.000        ; 0.000      ; 0.344      ;
+; 0.351  ; pnow[2]                ; pnow[2]  ; reset                  ; reset       ; 0.000        ; 0.000      ; 0.351      ;
+; 0.491  ; carry[1]               ; pnow[2]  ; reset                  ; reset       ; 0.000        ; -0.013     ; 0.478      ;
+; 0.539  ; carry[0]               ; carry[1] ; reset                  ; reset       ; 0.000        ; 0.064      ; 0.603      ;
+; 0.544  ; carry[0]               ; pnow[1]  ; reset                  ; reset       ; 0.000        ; 0.053      ; 0.597      ;
++--------+------------------------+----------+------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'fstate.entregaComTroco'                                                                                                                   ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                        ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+; -1.696 ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 2.387      ; 0.832      ;
+; -1.196 ; fstate.entregaComTroco ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 2.387      ; 0.832      ;
+; -0.767 ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 1.458      ; 0.832      ;
+; -0.267 ; fstate.entregaComTroco ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 1.458      ; 0.832      ;
+; 0.321  ; fstate.principio       ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.343      ; 0.664      ;
+; 0.342  ; pnow[0]                ; pnow[0]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 0.000      ; 0.342      ;
+; 0.344  ; pnow[1]                ; pnow[1]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 0.000      ; 0.344      ;
+; 0.351  ; pnow[2]                ; pnow[2]                        ; fstate.entregaComTroco ; fstate.entregaComTroco ; 0.000        ; 0.000      ; 0.351      ;
+; 0.473  ; fstate.maisHalf1       ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 0.675      ;
+; 0.476  ; fstate.maisOne1        ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 0.678      ;
+; 0.508  ; fstate.principio       ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.342      ; 0.850      ;
+; 0.545  ; fstate.principio       ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.350      ; 0.895      ;
+; 0.550  ; fstate.start1          ; reg_fstate.start1_437          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.164      ; 0.714      ;
+; 0.606  ; fstate.entregaSemTroco ; pnow[2]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; 0.556      ; 0.662      ;
+; 0.606  ; fstate.maisHalf1       ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; 0.558      ; 0.664      ;
+; 0.609  ; fstate.maisOne1        ; pnow[1]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; 0.558      ; 0.667      ;
+; 0.612  ; fstate.principio       ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.350      ; 0.962      ;
+; 0.635  ; fstate.start4          ; reg_fstate.start4_419          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.163      ; 0.798      ;
+; 0.644  ; fstate.maisOne1        ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 0.846      ;
+; 0.646  ; fstate.principio       ; reg_fstate.principio_455       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.388      ; 1.034      ;
+; 0.682  ; fstate.maisOne1        ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.170      ; 0.852      ;
+; 0.682  ; fstate.start3          ; reg_fstate.start3_425          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.168      ; 0.850      ;
+; 0.709  ; fstate.maisOne1        ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.206      ; 0.915      ;
+; 0.730  ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.579      ; 0.809      ;
+; 0.750  ; fstate.start4          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.205      ; 0.955      ;
+; 0.751  ; fstate.start2          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 0.953      ;
+; 0.752  ; fstate.start4          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.205      ; 0.957      ;
+; 0.753  ; fstate.start2          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 0.955      ;
+; 0.800  ; fstate.start3          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 1.002      ;
+; 0.802  ; fstate.start3          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 1.004      ;
+; 0.804  ; fstate.maisHalf1       ; reg_fstate.entregaSemTroco_407 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.170      ; 0.974      ;
+; 0.807  ; fstate.start1          ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.205      ; 1.012      ;
+; 0.808  ; fstate.maisHalf1       ; reg_fstate.maisOne1_449        ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.202      ; 1.010      ;
+; 0.809  ; fstate.start1          ; reg_fstate.maisHalf1_443       ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.205      ; 1.014      ;
+; 0.831  ; fstate.maisHalf1       ; reg_fstate.entregaComTroco_413 ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.206      ; 1.037      ;
+; 0.889  ; pnow[0]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.575      ; 0.964      ;
+; 0.897  ; fstate.start2          ; reg_fstate.start2_431          ; clock                  ; fstate.entregaComTroco ; 0.000        ; 0.168      ; 1.065      ;
+; 0.897  ; pnow[0]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.575      ; 0.972      ;
+; 0.904  ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; 0.543      ; 0.947      ;
+; 1.274  ; pnow[0]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.465     ; 0.809      ;
+; 1.369  ; pnow[1]                ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.525     ; 0.344      ;
+; 1.376  ; pnow[2]                ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.525     ; 0.351      ;
+; 1.409  ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.386     ; 0.523      ;
+; 1.433  ; pnow[0]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.469     ; 0.964      ;
+; 1.434  ; pnow[2]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.911     ; 0.523      ;
+; 1.441  ; pnow[0]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.469     ; 0.972      ;
+; 1.448  ; pnow[0]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.501     ; 0.947      ;
+; 1.462  ; fstate.entregaSemTroco ; pnow[0]                        ; clock                  ; fstate.entregaComTroco ; -0.500       ; -0.373     ; 0.589      ;
+; 1.515  ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.350     ; 0.665      ;
+; 1.516  ; carry[1]               ; pnow[2]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.538     ; 0.478      ;
+; 1.540  ; pnow[2]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.875     ; 0.665      ;
+; 1.563  ; pMeta[2]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.031     ; 0.532      ;
+; 1.569  ; carry[0]               ; pnow[1]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -0.472     ; 0.597      ;
+; 1.571  ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.352     ; 0.719      ;
+; 1.596  ; pnow[1]                ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.877     ; 0.719      ;
+; 1.702  ; pMeta[0]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.994     ; 0.708      ;
+; 1.726  ; pnow[1]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.356     ; 0.870      ;
+; 1.732  ; pnow[2]                ; reg_fstate.maisOne1_449        ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.354     ; 0.878      ;
+; 1.734  ; pnow[1]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.356     ; 0.878      ;
+; 1.740  ; pnow[2]                ; reg_fstate.maisHalf1_443       ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.354     ; 0.886      ;
+; 1.741  ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; fstate.entregaComTroco ; fstate.entregaComTroco ; -0.500       ; -0.388     ; 0.853      ;
+; 1.751  ; pnow[1]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.881     ; 0.870      ;
+; 1.757  ; pnow[2]                ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.879     ; 0.878      ;
+; 1.759  ; pnow[1]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.881     ; 0.878      ;
+; 1.764  ; pMeta[1]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.996     ; 0.768      ;
+; 1.765  ; pnow[2]                ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.879     ; 0.886      ;
+; 1.766  ; pnow[1]                ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.913     ; 0.853      ;
+; 1.806  ; pMeta[0]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.998     ; 0.808      ;
+; 1.814  ; pMeta[0]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.998     ; 0.816      ;
+; 1.821  ; pMeta[0]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.030     ; 0.791      ;
+; 1.867  ; pMeta[2]               ; reg_fstate.entregaComTroco_413 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.995     ; 0.872      ;
+; 1.868  ; pMeta[1]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.000     ; 0.868      ;
+; 1.876  ; pMeta[1]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.000     ; 0.876      ;
+; 1.883  ; pMeta[1]               ; reg_fstate.entregaSemTroco_407 ; reset                  ; fstate.entregaComTroco ; 0.000        ; -1.032     ; 0.851      ;
+; 1.886  ; pnow[0]                ; pnow[0]                        ; reset                  ; fstate.entregaComTroco ; -0.500       ; -1.044     ; 0.342      ;
+; 1.924  ; pMeta[2]               ; reg_fstate.maisOne1_449        ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.999     ; 0.925      ;
+; 1.932  ; pMeta[2]               ; reg_fstate.maisHalf1_443       ; reset                  ; fstate.entregaComTroco ; 0.000        ; -0.999     ; 0.933      ;
++--------+------------------------+--------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                        ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                ; Launch Clock           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+; 0.053 ; reg_fstate.start4_419          ; fstate.start4          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.163     ; 0.042      ;
+; 0.054 ; reg_fstate.start1_437          ; fstate.start1          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.164     ; 0.042      ;
+; 0.058 ; reg_fstate.start2_431          ; fstate.start2          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.168     ; 0.042      ;
+; 0.058 ; reg_fstate.start3_425          ; fstate.start3          ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.168     ; 0.042      ;
+; 0.060 ; reg_fstate.entregaSemTroco_407 ; fstate.entregaSemTroco ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.170     ; 0.042      ;
+; 0.092 ; reg_fstate.maisHalf1_443       ; fstate.maisHalf1       ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.202     ; 0.042      ;
+; 0.092 ; reg_fstate.maisOne1_449        ; fstate.maisOne1        ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.202     ; 0.042      ;
+; 0.277 ; reg_fstate.entregaComTroco_413 ; fstate.entregaComTroco ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.387     ; 0.042      ;
+; 0.463 ; reg_fstate.principio_455       ; fstate.principio       ; fstate.entregaComTroco ; clock       ; 0.000        ; -0.388     ; 0.227      ;
++-------+--------------------------------+------------------------+------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'fstate.entregaComTroco'                                                                                       ;
++-------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                        ; Launch Clock ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; 0.258 ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; 0.500        ; 1.991      ; 1.327      ;
+; 0.344 ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; 0.500        ; 2.001      ; 1.316      ;
+; 0.621 ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; 0.500        ; 2.033      ; 1.316      ;
+; 0.740 ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; 0.500        ; 2.033      ; 1.316      ;
+; 0.745 ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; 0.500        ; 1.999      ; 1.324      ;
+; 0.758 ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; 1.000        ; 1.991      ; 1.327      ;
+; 0.810 ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; 0.500        ; 1.992      ; 1.328      ;
+; 0.822 ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; 0.500        ; 2.037      ; 1.328      ;
+; 0.844 ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; 1.000        ; 2.001      ; 1.316      ;
+; 0.906 ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; 0.500        ; 1.999      ; 1.319      ;
+; 0.937 ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; 0.500        ; 2.037      ; 1.329      ;
+; 1.121 ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; 1.000        ; 2.033      ; 1.316      ;
+; 1.240 ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; 1.000        ; 2.033      ; 1.316      ;
+; 1.245 ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; 1.000        ; 1.999      ; 1.324      ;
+; 1.310 ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; 1.000        ; 1.992      ; 1.328      ;
+; 1.322 ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; 1.000        ; 2.037      ; 1.328      ;
+; 1.406 ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; 1.000        ; 1.999      ; 1.319      ;
+; 1.437 ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; 1.000        ; 2.037      ; 1.329      ;
++-------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'fstate.entregaComTroco'                                                                                         ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                        ; Launch Clock ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+; -0.717 ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; 0.000        ; 2.033      ; 1.316      ;
+; -0.717 ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; 0.000        ; 2.033      ; 1.316      ;
+; -0.709 ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; 0.000        ; 2.037      ; 1.328      ;
+; -0.708 ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; 0.000        ; 2.037      ; 1.329      ;
+; -0.685 ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; 0.000        ; 2.001      ; 1.316      ;
+; -0.680 ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; 0.000        ; 1.999      ; 1.319      ;
+; -0.675 ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; 0.000        ; 1.999      ; 1.324      ;
+; -0.664 ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; 0.000        ; 1.992      ; 1.328      ;
+; -0.664 ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; 0.000        ; 1.991      ; 1.327      ;
+; -0.217 ; reset     ; reg_fstate.maisHalf1_443       ; reset        ; fstate.entregaComTroco ; -0.500       ; 2.033      ; 1.316      ;
+; -0.217 ; reset     ; reg_fstate.maisOne1_449        ; reset        ; fstate.entregaComTroco ; -0.500       ; 2.033      ; 1.316      ;
+; -0.209 ; reset     ; reg_fstate.entregaComTroco_413 ; reset        ; fstate.entregaComTroco ; -0.500       ; 2.037      ; 1.328      ;
+; -0.208 ; reset     ; reg_fstate.principio_455       ; reset        ; fstate.entregaComTroco ; -0.500       ; 2.037      ; 1.329      ;
+; -0.185 ; reset     ; reg_fstate.entregaSemTroco_407 ; reset        ; fstate.entregaComTroco ; -0.500       ; 2.001      ; 1.316      ;
+; -0.180 ; reset     ; reg_fstate.start2_431          ; reset        ; fstate.entregaComTroco ; -0.500       ; 1.999      ; 1.319      ;
+; -0.175 ; reset     ; reg_fstate.start3_425          ; reset        ; fstate.entregaComTroco ; -0.500       ; 1.999      ; 1.324      ;
+; -0.164 ; reset     ; reg_fstate.start1_437          ; reset        ; fstate.entregaComTroco ; -0.500       ; 1.992      ; 1.328      ;
+; -0.164 ; reset     ; reg_fstate.start4_419          ; reset        ; fstate.entregaComTroco ; -0.500       ; 1.991      ; 1.327      ;
++--------+-----------+--------------------------------+--------------+------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaComTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaComTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaSemTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaSemTroco     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisHalf1           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisHalf1           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisOne1            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisOne1            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.principio           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.principio           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start1              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start1              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start2              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start2              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start3              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start3              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; fstate.start4              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start4              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaComTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaComTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.entregaSemTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.entregaSemTroco|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisHalf1|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisHalf1|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.maisOne1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.maisOne1|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.principio|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.principio|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start1|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start1|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start2|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start2|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start3|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start3|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start4|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start4|clk          ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'reset'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; reset ; Rise       ; reset                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]|datac             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]|datac             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[0]~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[0]~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; carry[1]|datab             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; carry[1]|datab             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[0]~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[0]~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[1]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[1]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pMeta[2]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pMeta[2]|datad             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]~3|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[0]~3|datab            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[0]~3|datab            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4clkctrl|inclk[0]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4clkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[1]~4|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[1]~4|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[2]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[2]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; pnow[2]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; pnow[2]|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset|combout              ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'fstate.entregaComTroco'                                                                              ;
++-------+--------------+----------------+------------------+------------------------+------------+--------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                  ; Clock Edge ; Target                               ;
++-------+--------------+----------------+------------------+------------------------+------------+--------------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; fstate.entregaComTroco|regout        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; fstate.entregaComTroco|regout        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[0]                              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[0]                              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[0]|datab                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[0]|datab                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[0]~3|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[0]~3|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; pnow[0]~3|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; pnow[0]~3|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]                              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]                              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|inclk[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|inclk[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|outclk              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4clkctrl|outclk              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|combout                    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[1]~4|datad                      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[2]                              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[2]                              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow[2]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow[2]|datac                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|inclk[0]               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|inclk[0]               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|outclk                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow~2clkctrl|outclk                 ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; pnow~2|combout                       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; pnow~2|combout                       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; pnow~2|datac                         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; pnow~2|datac                         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaComTroco_413       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaComTroco_413       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaComTroco_413|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaComTroco_413|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaSemTroco_407       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.entregaSemTroco_407       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaSemTroco_407|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.entregaSemTroco_407|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisHalf1_443             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisHalf1_443             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisHalf1_443|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisHalf1_443|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisOne1_449              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.maisOne1_449              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisOne1_449|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.maisOne1_449|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.principio_455             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.principio_455             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.principio_455|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.principio_455|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start1_437                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start1_437                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start1_437|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start1_437|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start2_431                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start2_431                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start2_431|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start2_431|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start3_425                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start3_425                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start3_425|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start3_425|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Rise       ; reg_fstate.start4_419                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Rise       ; reg_fstate.start4_419                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; fstate.entregaComTroco ; Fall       ; reg_fstate.start4_419|datad          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; fstate.entregaComTroco ; Fall       ; reg_fstate.start4_419|datad          ;
++-------+--------------+----------------+------------------+------------------------+------------+--------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Setup Times                                                                              ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; B1        ; fstate.entregaComTroco ; 0.925 ; 0.925 ; Rise       ; fstate.entregaComTroco ;
+; B2        ; fstate.entregaComTroco ; 3.001 ; 3.001 ; Rise       ; fstate.entregaComTroco ;
+; B3        ; fstate.entregaComTroco ; 3.023 ; 3.023 ; Rise       ; fstate.entregaComTroco ;
+; B4        ; fstate.entregaComTroco ; 2.917 ; 2.917 ; Rise       ; fstate.entregaComTroco ;
+; butHalf   ; fstate.entregaComTroco ; 3.219 ; 3.219 ; Rise       ; fstate.entregaComTroco ;
+; butOne    ; fstate.entregaComTroco ; 3.258 ; 3.258 ; Rise       ; fstate.entregaComTroco ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Hold Times                                                                                 ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; B1        ; fstate.entregaComTroco ; 0.032  ; 0.032  ; Rise       ; fstate.entregaComTroco ;
+; B2        ; fstate.entregaComTroco ; -1.910 ; -1.910 ; Rise       ; fstate.entregaComTroco ;
+; B3        ; fstate.entregaComTroco ; -2.117 ; -2.117 ; Rise       ; fstate.entregaComTroco ;
+; B4        ; fstate.entregaComTroco ; -1.995 ; -1.995 ; Rise       ; fstate.entregaComTroco ;
+; butHalf   ; fstate.entregaComTroco ; -2.179 ; -2.179 ; Rise       ; fstate.entregaComTroco ;
+; butOne    ; fstate.entregaComTroco ; -2.080 ; -2.080 ; Rise       ; fstate.entregaComTroco ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; r1        ; clock      ; 4.395 ; 4.395 ; Rise       ; clock           ;
+; r2        ; clock      ; 4.490 ; 4.490 ; Rise       ; clock           ;
+; r3        ; clock      ; 4.493 ; 4.493 ; Rise       ; clock           ;
+; r4        ; clock      ; 4.523 ; 4.523 ; Rise       ; clock           ;
+; r1        ; reset      ; 3.718 ; 3.718 ; Rise       ; reset           ;
+; r2        ; reset      ; 3.176 ; 3.176 ; Rise       ; reset           ;
+; r3        ; reset      ; 3.318 ; 3.318 ; Rise       ; reset           ;
+; r4        ; reset      ; 3.238 ; 3.238 ; Rise       ; reset           ;
+; r1        ; reset      ; 3.718 ; 3.718 ; Fall       ; reset           ;
+; r2        ; reset      ; 3.176 ; 3.176 ; Fall       ; reset           ;
+; r3        ; reset      ; 3.318 ; 3.318 ; Fall       ; reset           ;
+; r4        ; reset      ; 3.238 ; 3.238 ; Fall       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; r1        ; clock      ; 4.395 ; 4.395 ; Rise       ; clock           ;
+; r2        ; clock      ; 4.490 ; 4.490 ; Rise       ; clock           ;
+; r3        ; clock      ; 4.493 ; 4.493 ; Rise       ; clock           ;
+; r4        ; clock      ; 4.523 ; 4.523 ; Rise       ; clock           ;
+; r1        ; reset      ; 3.718 ; 3.718 ; Rise       ; reset           ;
+; r2        ; reset      ; 3.176 ; 3.176 ; Rise       ; reset           ;
+; r3        ; reset      ; 3.318 ; 3.318 ; Rise       ; reset           ;
+; r4        ; reset      ; 3.238 ; 3.238 ; Rise       ; reset           ;
+; r1        ; reset      ; 3.718 ; 3.718 ; Fall       ; reset           ;
+; r2        ; reset      ; 3.176 ; 3.176 ; Fall       ; reset           ;
+; r3        ; reset      ; 3.318 ; 3.318 ; Fall       ; reset           ;
+; r4        ; reset      ; 3.238 ; 3.238 ; Fall       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                    ;
++-------------------------+---------+---------+----------+---------+---------------------+
+; Clock                   ; Setup   ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------+---------+---------+----------+---------+---------------------+
+; Worst-case Slack        ; -4.891  ; -4.049  ; -0.361   ; -1.330  ; -1.380              ;
+;  clock                  ; -0.702  ; 0.053   ; N/A      ; N/A     ; -1.380              ;
+;  fstate.entregaComTroco ; -4.891  ; -3.225  ; -0.361   ; -1.330  ; 0.500               ;
+;  reset                  ; -1.253  ; -4.049  ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS         ; -39.918 ; -16.651 ; -0.545   ; -11.286 ; -11.76              ;
+;  clock                  ; -1.008  ; 0.000   ; N/A      ; N/A     ; -10.380             ;
+;  fstate.entregaComTroco ; -33.264 ; -4.960  ; -0.545   ; -11.286 ; 0.000               ;
+;  reset                  ; -5.646  ; -11.691 ; N/A      ; N/A     ; -1.380              ;
++-------------------------+---------+---------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Setup Times                                                                              ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; B1        ; fstate.entregaComTroco ; 2.350 ; 2.350 ; Rise       ; fstate.entregaComTroco ;
+; B2        ; fstate.entregaComTroco ; 5.694 ; 5.694 ; Rise       ; fstate.entregaComTroco ;
+; B3        ; fstate.entregaComTroco ; 5.728 ; 5.728 ; Rise       ; fstate.entregaComTroco ;
+; B4        ; fstate.entregaComTroco ; 5.472 ; 5.472 ; Rise       ; fstate.entregaComTroco ;
+; butHalf   ; fstate.entregaComTroco ; 6.142 ; 6.142 ; Rise       ; fstate.entregaComTroco ;
+; butOne    ; fstate.entregaComTroco ; 6.263 ; 6.263 ; Rise       ; fstate.entregaComTroco ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Hold Times                                                                                 ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; B1        ; fstate.entregaComTroco ; 0.032  ; 0.032  ; Rise       ; fstate.entregaComTroco ;
+; B2        ; fstate.entregaComTroco ; -1.910 ; -1.910 ; Rise       ; fstate.entregaComTroco ;
+; B3        ; fstate.entregaComTroco ; -2.117 ; -2.117 ; Rise       ; fstate.entregaComTroco ;
+; B4        ; fstate.entregaComTroco ; -1.995 ; -1.995 ; Rise       ; fstate.entregaComTroco ;
+; butHalf   ; fstate.entregaComTroco ; -2.179 ; -2.179 ; Rise       ; fstate.entregaComTroco ;
+; butOne    ; fstate.entregaComTroco ; -2.080 ; -2.080 ; Rise       ; fstate.entregaComTroco ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; r1        ; clock      ; 8.394 ; 8.394 ; Rise       ; clock           ;
+; r2        ; clock      ; 8.627 ; 8.627 ; Rise       ; clock           ;
+; r3        ; clock      ; 8.634 ; 8.634 ; Rise       ; clock           ;
+; r4        ; clock      ; 8.644 ; 8.644 ; Rise       ; clock           ;
+; r1        ; reset      ; 7.170 ; 7.170 ; Rise       ; reset           ;
+; r2        ; reset      ; 6.097 ; 6.097 ; Rise       ; reset           ;
+; r3        ; reset      ; 6.382 ; 6.382 ; Rise       ; reset           ;
+; r4        ; reset      ; 6.159 ; 6.159 ; Rise       ; reset           ;
+; r1        ; reset      ; 7.170 ; 7.170 ; Fall       ; reset           ;
+; r2        ; reset      ; 6.097 ; 6.097 ; Fall       ; reset           ;
+; r3        ; reset      ; 6.382 ; 6.382 ; Fall       ; reset           ;
+; r4        ; reset      ; 6.159 ; 6.159 ; Fall       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; r1        ; clock      ; 4.395 ; 4.395 ; Rise       ; clock           ;
+; r2        ; clock      ; 4.490 ; 4.490 ; Rise       ; clock           ;
+; r3        ; clock      ; 4.493 ; 4.493 ; Rise       ; clock           ;
+; r4        ; clock      ; 4.523 ; 4.523 ; Rise       ; clock           ;
+; r1        ; reset      ; 3.718 ; 3.718 ; Rise       ; reset           ;
+; r2        ; reset      ; 3.176 ; 3.176 ; Rise       ; reset           ;
+; r3        ; reset      ; 3.318 ; 3.318 ; Rise       ; reset           ;
+; r4        ; reset      ; 3.238 ; 3.238 ; Rise       ; reset           ;
+; r1        ; reset      ; 3.718 ; 3.718 ; Fall       ; reset           ;
+; r2        ; reset      ; 3.176 ; 3.176 ; Fall       ; reset           ;
+; r3        ; reset      ; 3.318 ; 3.318 ; Fall       ; reset           ;
+; r4        ; reset      ; 3.238 ; 3.238 ; Fall       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                             ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; fstate.entregaComTroco ; clock                  ; 9        ; 0        ; 0        ; 0        ;
+; clock                  ; fstate.entregaComTroco ; 27       ; 0        ; 4        ; 0        ;
+; fstate.entregaComTroco ; fstate.entregaComTroco ; 0        ; 21       ; 2        ; 5        ;
+; reset                  ; fstate.entregaComTroco ; 33       ; 0        ; 5        ; 0        ;
+; clock                  ; reset                  ; 11       ; 0        ; 0        ; 0        ;
+; fstate.entregaComTroco ; reset                  ; 2        ; 7        ; 0        ; 0        ;
+; reset                  ; reset                  ; 8        ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                              ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; fstate.entregaComTroco ; clock                  ; 9        ; 0        ; 0        ; 0        ;
+; clock                  ; fstate.entregaComTroco ; 27       ; 0        ; 4        ; 0        ;
+; fstate.entregaComTroco ; fstate.entregaComTroco ; 0        ; 21       ; 2        ; 5        ;
+; reset                  ; fstate.entregaComTroco ; 33       ; 0        ; 5        ; 0        ;
+; clock                  ; reset                  ; 11       ; 0        ; 0        ; 0        ;
+; fstate.entregaComTroco ; reset                  ; 2        ; 7        ; 0        ; 0        ;
+; reset                  ; reset                  ; 8        ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------+
+; Recovery Transfers                                                              ;
++------------+------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------------------+----------+----------+----------+----------+
+; reset      ; fstate.entregaComTroco ; 9        ; 9        ; 0        ; 0        ;
++------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------+
+; Removal Transfers                                                               ;
++------------+------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------------------+----------+----------+----------+----------+
+; reset      ; fstate.entregaComTroco ; 9        ; 9        ; 0        ; 0        ;
++------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 40    ; 40   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Nov 08 13:28:02 2019
+Info: Command: quartus_sta berranteiro -c berranteiro
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 17 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'berranteiro.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+    Info (332105): create_clock -period 1.000 -name fstate.entregaComTroco fstate.entregaComTroco
+    Info (332105): create_clock -period 1.000 -name reset reset
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.891
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.891       -33.264 fstate.entregaComTroco 
+    Info (332119):    -1.253        -5.646 reset 
+    Info (332119):    -0.702        -1.008 clock 
+Info (332146): Worst-case hold slack is -4.049
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.049       -11.691 reset 
+    Info (332119):    -3.225        -4.960 fstate.entregaComTroco 
+    Info (332119):     0.172         0.000 clock 
+Info (332146): Worst-case recovery slack is -0.361
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.361        -0.545 fstate.entregaComTroco 
+Info (332146): Worst-case removal slack is -1.330
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.330       -11.286 fstate.entregaComTroco 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -10.380 clock 
+    Info (332119):    -1.380        -1.380 reset 
+    Info (332119):     0.500         0.000 fstate.entregaComTroco 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.724
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.724        -9.988 fstate.entregaComTroco 
+    Info (332119):     0.057         0.000 reset 
+    Info (332119):     0.417         0.000 clock 
+Info (332146): Worst-case hold slack is -2.221
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.221        -6.517 reset 
+    Info (332119):    -1.696        -2.463 fstate.entregaComTroco 
+    Info (332119):     0.053         0.000 clock 
+Info (332146): Worst-case recovery slack is 0.258
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.258         0.000 fstate.entregaComTroco 
+Info (332146): Worst-case removal slack is -0.717
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.717        -6.219 fstate.entregaComTroco 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -10.380 clock 
+    Info (332119):    -1.380        -1.380 reset 
+    Info (332119):     0.500         0.000 fstate.entregaComTroco 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 387 megabytes
+    Info: Processing ended: Fri Nov 08 13:28:05 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

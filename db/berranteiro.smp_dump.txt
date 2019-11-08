@@ -1,0 +1,12 @@
+
+State Machine - |berranteiro|fstate
+Name fstate.entregaSemTroco fstate.entregaComTroco fstate.start4 fstate.start3 fstate.start2 fstate.start1 fstate.maisHalf1 fstate.maisOne1 fstate.principio 
+fstate.principio 0 0 0 0 0 0 0 0 0 
+fstate.maisOne1 0 0 0 0 0 0 0 1 1 
+fstate.maisHalf1 0 0 0 0 0 0 1 0 1 
+fstate.start1 0 0 0 0 0 1 0 0 1 
+fstate.start2 0 0 0 0 1 0 0 0 1 
+fstate.start3 0 0 0 1 0 0 0 0 1 
+fstate.start4 0 0 1 0 0 0 0 0 1 
+fstate.entregaComTroco 0 1 0 0 0 0 0 0 1 
+fstate.entregaSemTroco 1 0 0 0 0 0 0 0 1 
