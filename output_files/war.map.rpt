@@ -1,5 +1,5 @@
 Analysis & Synthesis report for war
-Mon Dec 09 19:33:57 2019
+Mon Dec 09 20:02:10 2019
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -44,16 +44,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 09 19:33:57 2019         ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 09 20:02:10 2019         ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; war                                           ;
 ; Top-level Entity Name              ; war                                           ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 94                                            ;
-;     Total combinational functions  ; 94                                            ;
+; Total logic elements               ; 97                                            ;
+;     Total combinational functions  ; 97                                            ;
 ;     Dedicated logic registers      ; 23                                            ;
 ; Total registers                    ; 23                                            ;
-; Total pins                         ; 54                                            ;
+; Total pins                         ; 82                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
 ; Embedded Multiplier 9-bit elements ; 0                                             ;
@@ -171,27 +171,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 94    ;
+; Estimated Total logic elements              ; 97    ;
 ;                                             ;       ;
-; Total combinational functions               ; 94    ;
+; Total combinational functions               ; 97    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 49    ;
-;     -- 3 input functions                    ; 34    ;
-;     -- <=2 input functions                  ; 11    ;
+;     -- 4 input functions                    ; 50    ;
+;     -- 3 input functions                    ; 32    ;
+;     -- <=2 input functions                  ; 15    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 94    ;
+;     -- normal mode                          ; 97    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 23    ;
 ;     -- Dedicated logic registers            ; 23    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 54    ;
+; I/O pins                                    ; 82    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out                             ; 42    ;
-; Total fan-out                               ; 423   ;
-; Average fan-out                             ; 2.47  ;
+; Maximum fan-out                             ; 43    ;
+; Total fan-out                               ; 445   ;
+; Average fan-out                             ; 2.20  ;
 +---------------------------------------------+-------+
 
 
@@ -200,7 +200,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |war                       ; 94 (94)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |war                ;              ;
+; |war                       ; 97 (97)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 82   ; 0            ; |war                ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -248,7 +248,8 @@ Encoding Type:  One-Hot
 ; refrigs[1]                                         ; reset               ; yes                    ;
 ; refrigs[2]                                         ; reset               ; yes                    ;
 ; refrigs[0]                                         ; reset               ; yes                    ;
-; Number of user-specified and inferred latches = 6  ;                     ;                        ;
+; vendido                                            ; vendido             ; yes                    ;
+; Number of user-specified and inferred latches = 7  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -292,25 +293,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 09 19:33:55 2019
+    Info: Processing started: Mon Dec 09 20:02:08 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off war -c war
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file war.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: war-BEHAVIOR
     Info (12023): Found entity 1: war
 Info (12127): Elaborating entity "war" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at war.vhd(64): object "ooS" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at war.vhd(65): object "ol" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at war.vhd(66): object "lo" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at war.vhd(67): object "ll" assigned a value but never read
-Warning (10631): VHDL Process Statement warning at war.vhd(79): inferring latch(es) for signal or variable "money", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at war.vhd(79): inferring latch(es) for signal or variable "refrigs", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "refrigs[0]" at war.vhd(79)
-Info (10041): Inferred latch for "refrigs[1]" at war.vhd(79)
-Info (10041): Inferred latch for "refrigs[2]" at war.vhd(79)
-Info (10041): Inferred latch for "money[0]" at war.vhd(79)
-Info (10041): Inferred latch for "money[1]" at war.vhd(79)
-Info (10041): Inferred latch for "money[2]" at war.vhd(79)
+Warning (10036): Verilog HDL or VHDL warning at war.vhd(69): object "ooS" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at war.vhd(70): object "ol" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at war.vhd(71): object "lo" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at war.vhd(72): object "ll" assigned a value but never read
+Warning (10631): VHDL Process Statement warning at war.vhd(86): inferring latch(es) for signal or variable "money", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at war.vhd(86): inferring latch(es) for signal or variable "refrigs", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at war.vhd(86): inferring latch(es) for signal or variable "vendido", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "vendido" at war.vhd(86)
+Info (10041): Inferred latch for "refrigs[0]" at war.vhd(86)
+Info (10041): Inferred latch for "refrigs[1]" at war.vhd(86)
+Info (10041): Inferred latch for "refrigs[2]" at war.vhd(86)
+Info (10041): Inferred latch for "money[0]" at war.vhd(86)
+Info (10041): Inferred latch for "money[1]" at war.vhd(86)
+Info (10041): Inferred latch for "money[2]" at war.vhd(86)
+Warning (13012): Latch vendido has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fstate.r1EndClear
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "moneySeg0[1]" is stuck at GND
     Warning (13410): Pin "moneySeg1[2]" is stuck at GND
@@ -318,15 +323,27 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "precoSeg0[1]" is stuck at GND
     Warning (13410): Pin "precoSeg1[2]" is stuck at GND
     Warning (13410): Pin "precoSeg1[5]" is stuck at GND
+    Warning (13410): Pin "sell1[1]" is stuck at VCC
+    Warning (13410): Pin "sell1[4]" is stuck at VCC
+    Warning (13410): Pin "sell2[1]" is stuck at VCC
+    Warning (13410): Pin "sell2[2]" is stuck at VCC
+    Warning (13410): Pin "sell3[0]" is stuck at VCC
+    Warning (13410): Pin "sell3[1]" is stuck at VCC
+    Warning (13410): Pin "sell3[2]" is stuck at VCC
+    Warning (13410): Pin "sell3[6]" is stuck at VCC
+    Warning (13410): Pin "sell4[0]" is stuck at VCC
+    Warning (13410): Pin "sell4[1]" is stuck at VCC
+    Warning (13410): Pin "sell4[2]" is stuck at VCC
+    Warning (13410): Pin "sell4[6]" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 179 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 41 output pins
-    Info (21061): Implemented 94 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info (21059): Implemented 69 output pins
+    Info (21061): Implemented 97 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 30 warnings
     Info: Peak virtual memory: 492 megabytes
-    Info: Processing ended: Mon Dec 09 19:33:57 2019
+    Info: Processing ended: Mon Dec 09 20:02:10 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

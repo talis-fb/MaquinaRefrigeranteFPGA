@@ -51,8 +51,13 @@ ENTITY war IS
 		  moneySeg1 : out bit_vector(6 downto 0);
 		  
 		  precoSeg0 : out bit_vector(6 downto 0);
-		  precoSeg1 : out bit_vector(6 downto 0)
-		  	  
+		  precoSeg1 : out bit_vector(6 downto 0);
+		  
+		  sell1 : out bit_vector(6 downto 0);
+		  sell2 : out bit_vector(6 downto 0);
+		  sell3 : out bit_vector(6 downto 0);
+		  sell4 : out bit_vector(6 downto 0)
+		  	   
     );
 END war;
 
@@ -67,6 +72,8 @@ ARCHITECTURE BEHAVIOR OF war IS
 	 signal ll: bit;
 	 signal money: bit_vector(2 downto 0);
 	 signal refrigs: bit_vector(2 downto 0);
+	 
+	 signal vendido: bit;
 	 
 BEGIN
     PROCESS (clock,reg_fstate)
@@ -124,6 +131,8 @@ BEGIN
 						  
 						  money<="111";
 						  refrigs<="111";
+						  
+						  vendido<='0';
 						  
 						  
                 WHEN start1 =>
@@ -208,6 +217,7 @@ BEGIN
                     m1 <= '1';
 						  money<="001";
 						  refrigs<="000";
+						  vendido<='1';
 						  
                 WHEN r1Troco =>
                     IF ((finalizado = '1')) THEN
@@ -222,6 +232,7 @@ BEGIN
                     m1 <= '1';
 						  money<="010";
 						  refrigs<="000";
+						  vendido<='1';
 						  
                 WHEN r2i05 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
@@ -264,6 +275,7 @@ BEGIN
                     m2 <= '1';
 						  money<="010";
 						  refrigs<="001";
+						  vendido<='1';
 						  
                 WHEN r2Troco =>
                     IF ((finalizado = '1')) THEN
@@ -278,6 +290,7 @@ BEGIN
                     m2 <= '1';
 						  money<="011";
 						  refrigs<="001";
+						  vendido<='1';
 						  
                 WHEN r3i05 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
@@ -335,6 +348,7 @@ BEGIN
                     m3 <= '1';
 						  money<="011";
 						  refrigs<="010";
+						  vendido<='1';
 						  
                 WHEN r3Troco =>
                     IF ((finalizado = '1')) THEN
@@ -347,6 +361,7 @@ BEGIN
                     troco <= '1';
 						  money<="100";
 						  refrigs<="010";
+						  vendido<='1';
 
                     m3 <= '1';
                 WHEN r4i05 =>
@@ -420,6 +435,7 @@ BEGIN
                     m4 <= '1';
 						  money<="100";
 						  refrigs<="011";
+						  vendido<='1';
 						  
                 WHEN r4Troco =>
                     IF ((finalizado = '1')) THEN
@@ -432,6 +448,7 @@ BEGIN
                     troco <= '1';
 						  money<="101";
 						  refrigs<="011";
+						  vendido<='1';
 
                     m4 <= '1';
                 WHEN OTHERS => 
@@ -497,7 +514,28 @@ BEGIN
 			"1000000" when "111",
 			"0001001" when others;
 	 
-	 
+-----------------------------------------------
+
+	with vendido select
+	sell1<=  "1111111" when '0',
+				"0010010" when '1',
+				"1111111" when others;
+
+	with vendido select
+	sell2<=  "1111111" when '0',
+				"0000110" when '1',
+				"1111111" when others;
+					
+	with vendido select
+	sell3<=  "1111111" when '0',
+				"1000111" when '1',
+				"1111111" when others;
+
+	with vendido select
+	sell4<=  "1111111" when '0',
+				"1000111" when '1',
+				"1111111" when others;
+
 	 
 	 
 END BEHAVIOR;
