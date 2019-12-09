@@ -1,0 +1,1177 @@
+TimeQuest Timing Analyzer report for war
+Mon Dec 09 18:05:34 2019
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock'
+ 12. Slow Model Hold: 'clock'
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'clock'
+ 26. Fast Model Hold: 'clock'
+ 27. Fast Model Minimum Pulse Width: 'clock'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; war                                                             ;
+; Device Family      ; Cyclone II                                                      ;
+; Device Name        ; EP2C35F672C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Combined                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 502.01 MHz ; 450.05 MHz      ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -0.992 ; -5.793        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.222 ; -24.222               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                            ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -0.992 ; fstate.r3EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.028      ;
+; -0.961 ; fstate.r2EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 1.997      ;
+; -0.822 ; fstate.r2Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 1.858      ;
+; -0.791 ; fstate.r1Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 1.827      ;
+; -0.789 ; fstate.r1EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 1.825      ;
+; -0.741 ; fstate.r1EndClear ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 1.777      ;
+; -0.702 ; fstate.r3Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 1.738      ;
+; -0.689 ; fstate.r4EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 1.725      ;
+; -0.637 ; fstate.r4i20      ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; -0.005     ; 1.668      ;
+; -0.598 ; fstate.r1i05      ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; -0.005     ; 1.629      ;
+; -0.562 ; fstate.r4Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 1.598      ;
+; -0.475 ; fstate.r3i10      ; fstate.r3EndClear ; clock        ; clock       ; 1.000        ; 0.012      ; 1.523      ;
+; -0.445 ; fstate.r2i05      ; fstate.r2EndClear ; clock        ; clock       ; 1.000        ; -0.005     ; 1.476      ;
+; -0.441 ; fstate.start1     ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; 0.012      ; 1.489      ;
+; -0.406 ; fstate.r2i05      ; fstate.r2i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.442      ;
+; -0.400 ; fstate.r3i10      ; fstate.r3i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.436      ;
+; -0.358 ; fstate.r3i15      ; fstate.r3EndClear ; clock        ; clock       ; 1.000        ; 0.012      ; 1.406      ;
+; -0.314 ; fstate.r2i10      ; fstate.r2EndClear ; clock        ; clock       ; 1.000        ; -0.005     ; 1.345      ;
+; -0.310 ; fstate.r4i10      ; fstate.r4i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.346      ;
+; -0.304 ; fstate.r4i10      ; fstate.r4i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.340      ;
+; -0.302 ; fstate.r4i20      ; fstate.r4i20      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.338      ;
+; -0.295 ; fstate.r3i10      ; fstate.r3i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.331      ;
+; -0.277 ; fstate.r2i10      ; fstate.r2i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.313      ;
+; -0.254 ; fstate.r3i05      ; fstate.r3i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.290      ;
+; -0.209 ; fstate.start1     ; fstate.r1i05      ; clock        ; clock       ; 1.000        ; 0.017      ; 1.262      ;
+; -0.209 ; fstate.start4     ; fstate.r4i10      ; clock        ; clock       ; 1.000        ; 0.005      ; 1.250      ;
+; -0.189 ; fstate.principio  ; fstate.start3     ; clock        ; clock       ; 1.000        ; -0.012     ; 1.213      ;
+; -0.189 ; fstate.principio  ; fstate.start1     ; clock        ; clock       ; 1.000        ; -0.012     ; 1.213      ;
+; -0.187 ; fstate.principio  ; fstate.start2     ; clock        ; clock       ; 1.000        ; -0.012     ; 1.211      ;
+; -0.174 ; fstate.r3i15      ; fstate.r3i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.210      ;
+; -0.169 ; fstate.r4i05      ; fstate.r4i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.205      ;
+; -0.163 ; fstate.r2i10      ; fstate.r2Troco    ; clock        ; clock       ; 1.000        ; -0.005     ; 1.194      ;
+; -0.160 ; fstate.r4i15      ; fstate.r4i20      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.196      ;
+; -0.158 ; fstate.r4i15      ; fstate.r4i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.194      ;
+; -0.134 ; fstate.start2     ; fstate.r2i10      ; clock        ; clock       ; 1.000        ; 0.017      ; 1.187      ;
+; -0.132 ; fstate.start2     ; fstate.r2i05      ; clock        ; clock       ; 1.000        ; 0.017      ; 1.185      ;
+; -0.082 ; fstate.r4i10      ; fstate.r4i20      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.118      ;
+; -0.075 ; fstate.r4i05      ; fstate.r4i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.111      ;
+; -0.070 ; fstate.r3i05      ; fstate.r3i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.106      ;
+; -0.057 ; fstate.start3     ; fstate.r3i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.093      ;
+; -0.054 ; fstate.start3     ; fstate.r3i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.090      ;
+; 0.036  ; fstate.r1i05      ; fstate.r1Troco    ; clock        ; clock       ; 1.000        ; -0.005     ; 0.995      ;
+; 0.038  ; fstate.r4i20      ; fstate.r4Troco    ; clock        ; clock       ; 1.000        ; -0.005     ; 0.993      ;
+; 0.039  ; fstate.r4i15      ; fstate.r4EndClear ; clock        ; clock       ; 1.000        ; -0.005     ; 0.992      ;
+; 0.057  ; fstate.start4     ; fstate.r4i05      ; clock        ; clock       ; 1.000        ; 0.005      ; 0.984      ;
+; 0.059  ; fstate.r3i15      ; fstate.r3Troco    ; clock        ; clock       ; 1.000        ; 0.012      ; 0.989      ;
+; 0.242  ; fstate.principio  ; fstate.start4     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.794      ;
+; 0.379  ; fstate.principio  ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r3EndClear ; fstate.r3EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r2EndClear ; fstate.r2EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r1i05      ; fstate.r1i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.start3     ; fstate.start3     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.start1     ; fstate.start1     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.start2     ; fstate.start2     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r2Troco    ; fstate.r2Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r2i05      ; fstate.r2i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r3i05      ; fstate.r3i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r1Troco    ; fstate.r1Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r4Troco    ; fstate.r4Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r4EndClear ; fstate.r4EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r4i05      ; fstate.r4i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.r3Troco    ; fstate.r3Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; fstate.start4     ; fstate.start4     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.657      ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                            ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; fstate.start4     ; fstate.start4     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r4i05      ; fstate.r4i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r4Troco    ; fstate.r4Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.start3     ; fstate.start3     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r3i05      ; fstate.r3i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r3Troco    ; fstate.r3Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r1i05      ; fstate.r1i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r1Troco    ; fstate.r1Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.start2     ; fstate.start2     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r2i05      ; fstate.r2i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r2Troco    ; fstate.r2Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r4EndClear ; fstate.r4EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r2EndClear ; fstate.r2EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.r3EndClear ; fstate.r3EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.principio  ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; fstate.start1     ; fstate.start1     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.528 ; fstate.principio  ; fstate.start4     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.794      ;
+; 0.711 ; fstate.r3i15      ; fstate.r3Troco    ; clock        ; clock       ; 0.000        ; 0.012      ; 0.989      ;
+; 0.713 ; fstate.start4     ; fstate.r4i05      ; clock        ; clock       ; 0.000        ; 0.005      ; 0.984      ;
+; 0.731 ; fstate.r4i15      ; fstate.r4EndClear ; clock        ; clock       ; 0.000        ; -0.005     ; 0.992      ;
+; 0.732 ; fstate.r4i20      ; fstate.r4Troco    ; clock        ; clock       ; 0.000        ; -0.005     ; 0.993      ;
+; 0.734 ; fstate.r1i05      ; fstate.r1Troco    ; clock        ; clock       ; 0.000        ; -0.005     ; 0.995      ;
+; 0.824 ; fstate.start3     ; fstate.r3i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.090      ;
+; 0.827 ; fstate.start3     ; fstate.r3i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.093      ;
+; 0.840 ; fstate.r3i05      ; fstate.r3i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.106      ;
+; 0.845 ; fstate.r4i05      ; fstate.r4i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.111      ;
+; 0.852 ; fstate.r4i10      ; fstate.r4i20      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.118      ;
+; 0.902 ; fstate.start2     ; fstate.r2i05      ; clock        ; clock       ; 0.000        ; 0.017      ; 1.185      ;
+; 0.904 ; fstate.start2     ; fstate.r2i10      ; clock        ; clock       ; 0.000        ; 0.017      ; 1.187      ;
+; 0.928 ; fstate.r4i15      ; fstate.r4i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.194      ;
+; 0.930 ; fstate.r4i15      ; fstate.r4i20      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.196      ;
+; 0.933 ; fstate.r2i10      ; fstate.r2Troco    ; clock        ; clock       ; 0.000        ; -0.005     ; 1.194      ;
+; 0.939 ; fstate.r4i05      ; fstate.r4i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.205      ;
+; 0.944 ; fstate.r3i15      ; fstate.r3i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.210      ;
+; 0.957 ; fstate.principio  ; fstate.start2     ; clock        ; clock       ; 0.000        ; -0.012     ; 1.211      ;
+; 0.959 ; fstate.principio  ; fstate.start3     ; clock        ; clock       ; 0.000        ; -0.012     ; 1.213      ;
+; 0.959 ; fstate.principio  ; fstate.start1     ; clock        ; clock       ; 0.000        ; -0.012     ; 1.213      ;
+; 0.979 ; fstate.start1     ; fstate.r1i05      ; clock        ; clock       ; 0.000        ; 0.017      ; 1.262      ;
+; 0.979 ; fstate.start4     ; fstate.r4i10      ; clock        ; clock       ; 0.000        ; 0.005      ; 1.250      ;
+; 1.024 ; fstate.r3i05      ; fstate.r3i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.290      ;
+; 1.047 ; fstate.r2i10      ; fstate.r2i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.313      ;
+; 1.065 ; fstate.r3i10      ; fstate.r3i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.331      ;
+; 1.072 ; fstate.r4i20      ; fstate.r4i20      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.338      ;
+; 1.074 ; fstate.r4i10      ; fstate.r4i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.340      ;
+; 1.080 ; fstate.r4i10      ; fstate.r4i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.346      ;
+; 1.084 ; fstate.r2i10      ; fstate.r2EndClear ; clock        ; clock       ; 0.000        ; -0.005     ; 1.345      ;
+; 1.128 ; fstate.r3i15      ; fstate.r3EndClear ; clock        ; clock       ; 0.000        ; 0.012      ; 1.406      ;
+; 1.170 ; fstate.r3i10      ; fstate.r3i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.436      ;
+; 1.176 ; fstate.r2i05      ; fstate.r2i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.442      ;
+; 1.211 ; fstate.start1     ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; 0.012      ; 1.489      ;
+; 1.215 ; fstate.r2i05      ; fstate.r2EndClear ; clock        ; clock       ; 0.000        ; -0.005     ; 1.476      ;
+; 1.245 ; fstate.r3i10      ; fstate.r3EndClear ; clock        ; clock       ; 0.000        ; 0.012      ; 1.523      ;
+; 1.332 ; fstate.r4Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.598      ;
+; 1.368 ; fstate.r1i05      ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; -0.005     ; 1.629      ;
+; 1.407 ; fstate.r4i20      ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; -0.005     ; 1.668      ;
+; 1.459 ; fstate.r4EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.725      ;
+; 1.472 ; fstate.r3Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.738      ;
+; 1.511 ; fstate.r1EndClear ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 1.777      ;
+; 1.559 ; fstate.r1EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.825      ;
+; 1.561 ; fstate.r1Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.827      ;
+; 1.592 ; fstate.r2Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.858      ;
+; 1.731 ; fstate.r2EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.997      ;
+; 1.762 ; fstate.r3EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.028      ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; clock ; Rise       ; clock                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.principio      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.principio      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r1EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r1EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r1Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r1Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r1i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r1i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2i10          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2i10          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3i10          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3i10          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3i15          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3i15          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i10          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i10          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i15          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i15          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i20          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i20          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start1         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start1         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start2         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start2         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start3         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start3         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start4         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start4         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.principio|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.principio|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r1EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r1EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r1Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r1Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r1i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r1i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i20|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i20|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start3|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start3|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start4|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start4|clk     ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; b1         ; clock      ; 5.772  ; 5.772  ; Fall       ; clock           ;
+; b2         ; clock      ; 5.916  ; 5.916  ; Fall       ; clock           ;
+; b3         ; clock      ; 6.018  ; 6.018  ; Fall       ; clock           ;
+; b4         ; clock      ; 5.816  ; 5.816  ; Fall       ; clock           ;
+; cent       ; clock      ; 0.330  ; 0.330  ; Fall       ; clock           ;
+; dolar      ; clock      ; 0.246  ; 0.246  ; Fall       ; clock           ;
+; est1       ; clock      ; 5.862  ; 5.862  ; Fall       ; clock           ;
+; est2       ; clock      ; 2.388  ; 2.388  ; Fall       ; clock           ;
+; est3       ; clock      ; 2.113  ; 2.113  ; Fall       ; clock           ;
+; est4       ; clock      ; 2.376  ; 2.376  ; Fall       ; clock           ;
+; finalizado ; clock      ; 3.494  ; 3.494  ; Fall       ; clock           ;
+; reset      ; clock      ; -0.632 ; -0.632 ; Fall       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; b1         ; clock      ; -5.073 ; -5.073 ; Fall       ; clock           ;
+; b2         ; clock      ; -4.851 ; -4.851 ; Fall       ; clock           ;
+; b3         ; clock      ; -4.728 ; -4.728 ; Fall       ; clock           ;
+; b4         ; clock      ; -4.957 ; -4.957 ; Fall       ; clock           ;
+; cent       ; clock      ; 1.138  ; 1.138  ; Fall       ; clock           ;
+; dolar      ; clock      ; 0.849  ; 0.849  ; Fall       ; clock           ;
+; est1       ; clock      ; -5.358 ; -5.358 ; Fall       ; clock           ;
+; est2       ; clock      ; -1.941 ; -1.941 ; Fall       ; clock           ;
+; est3       ; clock      ; -1.243 ; -1.243 ; Fall       ; clock           ;
+; est4       ; clock      ; -2.145 ; -2.145 ; Fall       ; clock           ;
+; finalizado ; clock      ; -2.558 ; -2.558 ; Fall       ; clock           ;
+; reset      ; clock      ; 1.513  ; 1.513  ; Fall       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ii        ; clock      ; 9.631  ; 9.631  ; Fall       ; clock           ;
+; io        ; clock      ; 10.080 ; 10.080 ; Fall       ; clock           ;
+; m1        ; clock      ; 9.664  ; 9.664  ; Fall       ; clock           ;
+; m2        ; clock      ; 10.124 ; 10.124 ; Fall       ; clock           ;
+; m3        ; clock      ; 9.906  ; 9.906  ; Fall       ; clock           ;
+; m4        ; clock      ; 9.481  ; 9.481  ; Fall       ; clock           ;
+; oi        ; clock      ; 9.951  ; 9.951  ; Fall       ; clock           ;
+; oo        ; clock      ; 10.802 ; 10.802 ; Fall       ; clock           ;
+; r1        ; clock      ; 9.272  ; 9.272  ; Fall       ; clock           ;
+; r2        ; clock      ; 9.504  ; 9.504  ; Fall       ; clock           ;
+; r3        ; clock      ; 9.159  ; 9.159  ; Fall       ; clock           ;
+; r4        ; clock      ; 9.285  ; 9.285  ; Fall       ; clock           ;
+; troco     ; clock      ; 10.191 ; 10.191 ; Fall       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ii        ; clock      ; 9.631  ; 9.631  ; Fall       ; clock           ;
+; io        ; clock      ; 9.830  ; 9.830  ; Fall       ; clock           ;
+; m1        ; clock      ; 9.492  ; 9.492  ; Fall       ; clock           ;
+; m2        ; clock      ; 9.924  ; 9.924  ; Fall       ; clock           ;
+; m3        ; clock      ; 9.630  ; 9.630  ; Fall       ; clock           ;
+; m4        ; clock      ; 9.124  ; 9.124  ; Fall       ; clock           ;
+; oi        ; clock      ; 9.379  ; 9.379  ; Fall       ; clock           ;
+; oo        ; clock      ; 10.270 ; 10.270 ; Fall       ; clock           ;
+; r1        ; clock      ; 9.272  ; 9.272  ; Fall       ; clock           ;
+; r2        ; clock      ; 9.504  ; 9.504  ; Fall       ; clock           ;
+; r3        ; clock      ; 9.159  ; 9.159  ; Fall       ; clock           ;
+; r4        ; clock      ; 9.285  ; 9.285  ; Fall       ; clock           ;
+; troco     ; clock      ; 9.931  ; 9.931  ; Fall       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; ii          ;    ; 7.010 ; 7.010 ;    ;
+; reset      ; io          ;    ; 7.454 ; 7.454 ;    ;
+; reset      ; m1          ;    ; 6.943 ; 6.943 ;    ;
+; reset      ; m2          ;    ; 7.149 ; 7.149 ;    ;
+; reset      ; m3          ;    ; 7.061 ; 7.061 ;    ;
+; reset      ; m4          ;    ; 6.949 ; 6.949 ;    ;
+; reset      ; oi          ;    ; 7.314 ; 7.314 ;    ;
+; reset      ; oo          ;    ; 7.437 ; 7.437 ;    ;
+; reset      ; r1          ;    ; 5.519 ; 5.519 ;    ;
+; reset      ; r2          ;    ; 5.522 ; 5.522 ;    ;
+; reset      ; r3          ;    ; 5.759 ; 5.759 ;    ;
+; reset      ; r4          ;    ; 6.719 ; 6.719 ;    ;
+; reset      ; troco       ;    ; 5.539 ; 5.539 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; ii          ;    ; 7.010 ; 7.010 ;    ;
+; reset      ; io          ;    ; 7.454 ; 7.454 ;    ;
+; reset      ; m1          ;    ; 6.943 ; 6.943 ;    ;
+; reset      ; m2          ;    ; 7.149 ; 7.149 ;    ;
+; reset      ; m3          ;    ; 7.061 ; 7.061 ;    ;
+; reset      ; m4          ;    ; 6.949 ; 6.949 ;    ;
+; reset      ; oi          ;    ; 7.314 ; 7.314 ;    ;
+; reset      ; oo          ;    ; 7.437 ; 7.437 ;    ;
+; reset      ; r1          ;    ; 5.519 ; 5.519 ;    ;
+; reset      ; r2          ;    ; 5.522 ; 5.522 ;    ;
+; reset      ; r3          ;    ; 5.759 ; 5.759 ;    ;
+; reset      ; r4          ;    ; 6.719 ; 6.719 ;    ;
+; reset      ; troco       ;    ; 5.539 ; 5.539 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.129 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.222 ; -24.222               ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                           ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; 0.129 ; fstate.r3EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.903      ;
+; 0.138 ; fstate.r2EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.894      ;
+; 0.168 ; fstate.r2Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.864      ;
+; 0.174 ; fstate.r1Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.858      ;
+; 0.205 ; fstate.r1EndClear ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 0.827      ;
+; 0.205 ; fstate.r1EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.827      ;
+; 0.243 ; fstate.r3Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.789      ;
+; 0.252 ; fstate.r4i20      ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; -0.003     ; 0.777      ;
+; 0.253 ; fstate.r4EndClear ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.779      ;
+; 0.273 ; fstate.r1i05      ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; -0.003     ; 0.756      ;
+; 0.301 ; fstate.r4Troco    ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.340 ; fstate.start1     ; fstate.r1EndClear ; clock        ; clock       ; 1.000        ; 0.008      ; 0.700      ;
+; 0.341 ; fstate.r3i10      ; fstate.r3EndClear ; clock        ; clock       ; 1.000        ; 0.008      ; 0.699      ;
+; 0.344 ; fstate.r2i05      ; fstate.r2EndClear ; clock        ; clock       ; 1.000        ; -0.003     ; 0.685      ;
+; 0.361 ; fstate.r3i10      ; fstate.r3i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.671      ;
+; 0.363 ; fstate.r2i05      ; fstate.r2i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.669      ;
+; 0.382 ; fstate.r3i15      ; fstate.r3EndClear ; clock        ; clock       ; 1.000        ; 0.008      ; 0.658      ;
+; 0.392 ; fstate.r2i10      ; fstate.r2EndClear ; clock        ; clock       ; 1.000        ; -0.003     ; 0.637      ;
+; 0.404 ; fstate.r4i10      ; fstate.r4i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.628      ;
+; 0.410 ; fstate.r4i10      ; fstate.r4i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.622      ;
+; 0.410 ; fstate.r2i10      ; fstate.r2i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.622      ;
+; 0.415 ; fstate.r3i10      ; fstate.r3i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.617      ;
+; 0.417 ; fstate.r4i20      ; fstate.r4i20      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.615      ;
+; 0.422 ; fstate.r3i05      ; fstate.r3i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.610      ;
+; 0.429 ; fstate.principio  ; fstate.start1     ; clock        ; clock       ; 1.000        ; -0.008     ; 0.595      ;
+; 0.430 ; fstate.principio  ; fstate.start3     ; clock        ; clock       ; 1.000        ; -0.008     ; 0.594      ;
+; 0.431 ; fstate.principio  ; fstate.start2     ; clock        ; clock       ; 1.000        ; -0.008     ; 0.593      ;
+; 0.433 ; fstate.start1     ; fstate.r1i05      ; clock        ; clock       ; 1.000        ; 0.011      ; 0.610      ;
+; 0.442 ; fstate.start4     ; fstate.r4i10      ; clock        ; clock       ; 1.000        ; 0.003      ; 0.593      ;
+; 0.460 ; fstate.r2i10      ; fstate.r2Troco    ; clock        ; clock       ; 1.000        ; -0.003     ; 0.569      ;
+; 0.460 ; fstate.r3i15      ; fstate.r3i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.572      ;
+; 0.463 ; fstate.start2     ; fstate.r2i10      ; clock        ; clock       ; 1.000        ; 0.011      ; 0.580      ;
+; 0.463 ; fstate.r4i05      ; fstate.r4i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.569      ;
+; 0.465 ; fstate.start2     ; fstate.r2i05      ; clock        ; clock       ; 1.000        ; 0.011      ; 0.578      ;
+; 0.469 ; fstate.r4i15      ; fstate.r4i20      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.563      ;
+; 0.470 ; fstate.r4i15      ; fstate.r4i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.562      ;
+; 0.493 ; fstate.r4i10      ; fstate.r4i20      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.539      ;
+; 0.502 ; fstate.start3     ; fstate.r3i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.530      ;
+; 0.502 ; fstate.r4i05      ; fstate.r4i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.530      ;
+; 0.506 ; fstate.r3i05      ; fstate.r3i15      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.526      ;
+; 0.507 ; fstate.start3     ; fstate.r3i10      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.525      ;
+; 0.542 ; fstate.r1i05      ; fstate.r1Troco    ; clock        ; clock       ; 1.000        ; -0.003     ; 0.487      ;
+; 0.545 ; fstate.r4i15      ; fstate.r4EndClear ; clock        ; clock       ; 1.000        ; -0.003     ; 0.484      ;
+; 0.546 ; fstate.r4i20      ; fstate.r4Troco    ; clock        ; clock       ; 1.000        ; -0.003     ; 0.483      ;
+; 0.557 ; fstate.start4     ; fstate.r4i05      ; clock        ; clock       ; 1.000        ; 0.003      ; 0.478      ;
+; 0.558 ; fstate.r3i15      ; fstate.r3Troco    ; clock        ; clock       ; 1.000        ; 0.008      ; 0.482      ;
+; 0.637 ; fstate.principio  ; fstate.start4     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.395      ;
+; 0.665 ; fstate.principio  ; fstate.principio  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r3EndClear ; fstate.r3EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r2EndClear ; fstate.r2EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.start1     ; fstate.start1     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.start3     ; fstate.start3     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.start2     ; fstate.start2     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r1i05      ; fstate.r1i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r2Troco    ; fstate.r2Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r2i05      ; fstate.r2i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r3i05      ; fstate.r3i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r1Troco    ; fstate.r1Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r4EndClear ; fstate.r4EndClear ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r4Troco    ; fstate.r4Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r4i05      ; fstate.r4i05      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.r3Troco    ; fstate.r3Troco    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; fstate.start4     ; fstate.start4     ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                            ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; fstate.start4     ; fstate.start4     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r4i05      ; fstate.r4i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r4Troco    ; fstate.r4Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.start3     ; fstate.start3     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r3i05      ; fstate.r3i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r3Troco    ; fstate.r3Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r1i05      ; fstate.r1i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r1Troco    ; fstate.r1Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.start2     ; fstate.start2     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r2i05      ; fstate.r2i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r2Troco    ; fstate.r2Troco    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r4EndClear ; fstate.r4EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r2EndClear ; fstate.r2EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.r3EndClear ; fstate.r3EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.principio  ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; fstate.start1     ; fstate.start1     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243 ; fstate.principio  ; fstate.start4     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.395      ;
+; 0.322 ; fstate.r3i15      ; fstate.r3Troco    ; clock        ; clock       ; 0.000        ; 0.008      ; 0.482      ;
+; 0.323 ; fstate.start4     ; fstate.r4i05      ; clock        ; clock       ; 0.000        ; 0.003      ; 0.478      ;
+; 0.334 ; fstate.r4i20      ; fstate.r4Troco    ; clock        ; clock       ; 0.000        ; -0.003     ; 0.483      ;
+; 0.335 ; fstate.r4i15      ; fstate.r4EndClear ; clock        ; clock       ; 0.000        ; -0.003     ; 0.484      ;
+; 0.338 ; fstate.r1i05      ; fstate.r1Troco    ; clock        ; clock       ; 0.000        ; -0.003     ; 0.487      ;
+; 0.373 ; fstate.start3     ; fstate.r3i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; fstate.r3i05      ; fstate.r3i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.526      ;
+; 0.378 ; fstate.r4i05      ; fstate.r4i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; fstate.start3     ; fstate.r3i05      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.530      ;
+; 0.387 ; fstate.r4i10      ; fstate.r4i20      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.539      ;
+; 0.410 ; fstate.r4i15      ; fstate.r4i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.562      ;
+; 0.411 ; fstate.r4i15      ; fstate.r4i20      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.563      ;
+; 0.415 ; fstate.start2     ; fstate.r2i05      ; clock        ; clock       ; 0.000        ; 0.011      ; 0.578      ;
+; 0.417 ; fstate.r4i05      ; fstate.r4i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.569      ;
+; 0.417 ; fstate.start2     ; fstate.r2i10      ; clock        ; clock       ; 0.000        ; 0.011      ; 0.580      ;
+; 0.420 ; fstate.r2i10      ; fstate.r2Troco    ; clock        ; clock       ; 0.000        ; -0.003     ; 0.569      ;
+; 0.420 ; fstate.r3i15      ; fstate.r3i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.572      ;
+; 0.438 ; fstate.start4     ; fstate.r4i10      ; clock        ; clock       ; 0.000        ; 0.003      ; 0.593      ;
+; 0.447 ; fstate.start1     ; fstate.r1i05      ; clock        ; clock       ; 0.000        ; 0.011      ; 0.610      ;
+; 0.449 ; fstate.principio  ; fstate.start2     ; clock        ; clock       ; 0.000        ; -0.008     ; 0.593      ;
+; 0.450 ; fstate.principio  ; fstate.start3     ; clock        ; clock       ; 0.000        ; -0.008     ; 0.594      ;
+; 0.451 ; fstate.principio  ; fstate.start1     ; clock        ; clock       ; 0.000        ; -0.008     ; 0.595      ;
+; 0.458 ; fstate.r3i05      ; fstate.r3i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.610      ;
+; 0.463 ; fstate.r4i20      ; fstate.r4i20      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.615      ;
+; 0.465 ; fstate.r3i10      ; fstate.r3i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.617      ;
+; 0.470 ; fstate.r4i10      ; fstate.r4i15      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.622      ;
+; 0.470 ; fstate.r2i10      ; fstate.r2i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.622      ;
+; 0.476 ; fstate.r4i10      ; fstate.r4i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.628      ;
+; 0.488 ; fstate.r2i10      ; fstate.r2EndClear ; clock        ; clock       ; 0.000        ; -0.003     ; 0.637      ;
+; 0.498 ; fstate.r3i15      ; fstate.r3EndClear ; clock        ; clock       ; 0.000        ; 0.008      ; 0.658      ;
+; 0.517 ; fstate.r2i05      ; fstate.r2i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.669      ;
+; 0.519 ; fstate.r3i10      ; fstate.r3i10      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.671      ;
+; 0.536 ; fstate.r2i05      ; fstate.r2EndClear ; clock        ; clock       ; 0.000        ; -0.003     ; 0.685      ;
+; 0.539 ; fstate.r3i10      ; fstate.r3EndClear ; clock        ; clock       ; 0.000        ; 0.008      ; 0.699      ;
+; 0.540 ; fstate.start1     ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; 0.008      ; 0.700      ;
+; 0.579 ; fstate.r4Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.607 ; fstate.r1i05      ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; -0.003     ; 0.756      ;
+; 0.627 ; fstate.r4EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.779      ;
+; 0.628 ; fstate.r4i20      ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; -0.003     ; 0.777      ;
+; 0.637 ; fstate.r3Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.789      ;
+; 0.675 ; fstate.r1EndClear ; fstate.r1EndClear ; clock        ; clock       ; 0.000        ; 0.000      ; 0.827      ;
+; 0.675 ; fstate.r1EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.827      ;
+; 0.706 ; fstate.r1Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.858      ;
+; 0.712 ; fstate.r2Troco    ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.864      ;
+; 0.742 ; fstate.r2EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.894      ;
+; 0.751 ; fstate.r3EndClear ; fstate.principio  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.903      ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; clock ; Rise       ; clock                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.principio      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.principio      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r1EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r1EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r1Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r1Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r1i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r1i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r2i10          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r2i10          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3i10          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3i10          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r3i15          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r3i15          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4EndClear     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4Troco        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i05          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i05          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i10          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i10          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i15          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i15          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.r4i20          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.r4i20          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start1         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start1         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start2         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start2         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start3         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start3         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; fstate.start4         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; fstate.start4         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.principio|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.principio|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r1EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r1EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r1Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r1Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r1i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r1i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r2i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r2i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r3i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r3i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4EndClear|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4Troco|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i05|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i10|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i15|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.r4i20|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.r4i20|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start3|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start3|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fstate.start4|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fstate.start4|clk     ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; b1         ; clock      ; 3.069  ; 3.069  ; Fall       ; clock           ;
+; b2         ; clock      ; 3.151  ; 3.151  ; Fall       ; clock           ;
+; b3         ; clock      ; 3.185  ; 3.185  ; Fall       ; clock           ;
+; b4         ; clock      ; 3.062  ; 3.062  ; Fall       ; clock           ;
+; cent       ; clock      ; 0.024  ; 0.024  ; Fall       ; clock           ;
+; dolar      ; clock      ; -0.036 ; -0.036 ; Fall       ; clock           ;
+; est1       ; clock      ; 3.085  ; 3.085  ; Fall       ; clock           ;
+; est2       ; clock      ; 0.911  ; 0.911  ; Fall       ; clock           ;
+; est3       ; clock      ; 0.785  ; 0.785  ; Fall       ; clock           ;
+; est4       ; clock      ; 0.897  ; 0.897  ; Fall       ; clock           ;
+; finalizado ; clock      ; 2.050  ; 2.050  ; Fall       ; clock           ;
+; reset      ; clock      ; -0.519 ; -0.519 ; Fall       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; b1         ; clock      ; -2.752 ; -2.752 ; Fall       ; clock           ;
+; b2         ; clock      ; -2.655 ; -2.655 ; Fall       ; clock           ;
+; b3         ; clock      ; -2.594 ; -2.594 ; Fall       ; clock           ;
+; b4         ; clock      ; -2.675 ; -2.675 ; Fall       ; clock           ;
+; cent       ; clock      ; 0.650  ; 0.650  ; Fall       ; clock           ;
+; dolar      ; clock      ; 0.537  ; 0.537  ; Fall       ; clock           ;
+; est1       ; clock      ; -2.866 ; -2.866 ; Fall       ; clock           ;
+; est2       ; clock      ; -0.702 ; -0.702 ; Fall       ; clock           ;
+; est3       ; clock      ; -0.364 ; -0.364 ; Fall       ; clock           ;
+; est4       ; clock      ; -0.775 ; -0.775 ; Fall       ; clock           ;
+; finalizado ; clock      ; -1.647 ; -1.647 ; Fall       ; clock           ;
+; reset      ; clock      ; 0.838  ; 0.838  ; Fall       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ii        ; clock      ; 5.039 ; 5.039 ; Fall       ; clock           ;
+; io        ; clock      ; 5.209 ; 5.209 ; Fall       ; clock           ;
+; m1        ; clock      ; 5.020 ; 5.020 ; Fall       ; clock           ;
+; m2        ; clock      ; 5.220 ; 5.220 ; Fall       ; clock           ;
+; m3        ; clock      ; 5.133 ; 5.133 ; Fall       ; clock           ;
+; m4        ; clock      ; 4.960 ; 4.960 ; Fall       ; clock           ;
+; oi        ; clock      ; 5.132 ; 5.132 ; Fall       ; clock           ;
+; oo        ; clock      ; 5.515 ; 5.515 ; Fall       ; clock           ;
+; r1        ; clock      ; 4.862 ; 4.862 ; Fall       ; clock           ;
+; r2        ; clock      ; 4.966 ; 4.966 ; Fall       ; clock           ;
+; r3        ; clock      ; 4.795 ; 4.795 ; Fall       ; clock           ;
+; r4        ; clock      ; 4.862 ; 4.862 ; Fall       ; clock           ;
+; troco     ; clock      ; 5.255 ; 5.255 ; Fall       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ii        ; clock      ; 5.039 ; 5.039 ; Fall       ; clock           ;
+; io        ; clock      ; 5.105 ; 5.105 ; Fall       ; clock           ;
+; m1        ; clock      ; 4.943 ; 4.943 ; Fall       ; clock           ;
+; m2        ; clock      ; 5.141 ; 5.141 ; Fall       ; clock           ;
+; m3        ; clock      ; 5.011 ; 5.011 ; Fall       ; clock           ;
+; m4        ; clock      ; 4.813 ; 4.813 ; Fall       ; clock           ;
+; oi        ; clock      ; 4.886 ; 4.886 ; Fall       ; clock           ;
+; oo        ; clock      ; 5.289 ; 5.289 ; Fall       ; clock           ;
+; r1        ; clock      ; 4.862 ; 4.862 ; Fall       ; clock           ;
+; r2        ; clock      ; 4.966 ; 4.966 ; Fall       ; clock           ;
+; r3        ; clock      ; 4.795 ; 4.795 ; Fall       ; clock           ;
+; r4        ; clock      ; 4.862 ; 4.862 ; Fall       ; clock           ;
+; troco     ; clock      ; 5.122 ; 5.122 ; Fall       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; ii          ;    ; 3.630 ; 3.630 ;    ;
+; reset      ; io          ;    ; 3.798 ; 3.798 ;    ;
+; reset      ; m1          ;    ; 3.574 ; 3.574 ;    ;
+; reset      ; m2          ;    ; 3.663 ; 3.663 ;    ;
+; reset      ; m3          ;    ; 3.625 ; 3.625 ;    ;
+; reset      ; m4          ;    ; 3.622 ; 3.622 ;    ;
+; reset      ; oi          ;    ; 3.747 ; 3.747 ;    ;
+; reset      ; oo          ;    ; 3.803 ; 3.803 ;    ;
+; reset      ; r1          ;    ; 2.907 ; 2.907 ;    ;
+; reset      ; r2          ;    ; 2.908 ; 2.908 ;    ;
+; reset      ; r3          ;    ; 3.035 ; 3.035 ;    ;
+; reset      ; r4          ;    ; 3.475 ; 3.475 ;    ;
+; reset      ; troco       ;    ; 2.920 ; 2.920 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; ii          ;    ; 3.630 ; 3.630 ;    ;
+; reset      ; io          ;    ; 3.798 ; 3.798 ;    ;
+; reset      ; m1          ;    ; 3.574 ; 3.574 ;    ;
+; reset      ; m2          ;    ; 3.663 ; 3.663 ;    ;
+; reset      ; m3          ;    ; 3.625 ; 3.625 ;    ;
+; reset      ; m4          ;    ; 3.622 ; 3.622 ;    ;
+; reset      ; oi          ;    ; 3.747 ; 3.747 ;    ;
+; reset      ; oo          ;    ; 3.803 ; 3.803 ;    ;
+; reset      ; r1          ;    ; 2.907 ; 2.907 ;    ;
+; reset      ; r2          ;    ; 2.908 ; 2.908 ;    ;
+; reset      ; r3          ;    ; 3.035 ; 3.035 ;    ;
+; reset      ; r4          ;    ; 3.475 ; 3.475 ;    ;
+; reset      ; troco       ;    ; 2.920 ; 2.920 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.992 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+;  clock           ; -0.992 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -5.793 ; 0.0   ; 0.0      ; 0.0     ; -24.222             ;
+;  clock           ; -5.793 ; 0.000 ; N/A      ; N/A     ; -24.222             ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; b1         ; clock      ; 5.772  ; 5.772  ; Fall       ; clock           ;
+; b2         ; clock      ; 5.916  ; 5.916  ; Fall       ; clock           ;
+; b3         ; clock      ; 6.018  ; 6.018  ; Fall       ; clock           ;
+; b4         ; clock      ; 5.816  ; 5.816  ; Fall       ; clock           ;
+; cent       ; clock      ; 0.330  ; 0.330  ; Fall       ; clock           ;
+; dolar      ; clock      ; 0.246  ; 0.246  ; Fall       ; clock           ;
+; est1       ; clock      ; 5.862  ; 5.862  ; Fall       ; clock           ;
+; est2       ; clock      ; 2.388  ; 2.388  ; Fall       ; clock           ;
+; est3       ; clock      ; 2.113  ; 2.113  ; Fall       ; clock           ;
+; est4       ; clock      ; 2.376  ; 2.376  ; Fall       ; clock           ;
+; finalizado ; clock      ; 3.494  ; 3.494  ; Fall       ; clock           ;
+; reset      ; clock      ; -0.519 ; -0.519 ; Fall       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; b1         ; clock      ; -2.752 ; -2.752 ; Fall       ; clock           ;
+; b2         ; clock      ; -2.655 ; -2.655 ; Fall       ; clock           ;
+; b3         ; clock      ; -2.594 ; -2.594 ; Fall       ; clock           ;
+; b4         ; clock      ; -2.675 ; -2.675 ; Fall       ; clock           ;
+; cent       ; clock      ; 1.138  ; 1.138  ; Fall       ; clock           ;
+; dolar      ; clock      ; 0.849  ; 0.849  ; Fall       ; clock           ;
+; est1       ; clock      ; -2.866 ; -2.866 ; Fall       ; clock           ;
+; est2       ; clock      ; -0.702 ; -0.702 ; Fall       ; clock           ;
+; est3       ; clock      ; -0.364 ; -0.364 ; Fall       ; clock           ;
+; est4       ; clock      ; -0.775 ; -0.775 ; Fall       ; clock           ;
+; finalizado ; clock      ; -1.647 ; -1.647 ; Fall       ; clock           ;
+; reset      ; clock      ; 1.513  ; 1.513  ; Fall       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ii        ; clock      ; 9.631  ; 9.631  ; Fall       ; clock           ;
+; io        ; clock      ; 10.080 ; 10.080 ; Fall       ; clock           ;
+; m1        ; clock      ; 9.664  ; 9.664  ; Fall       ; clock           ;
+; m2        ; clock      ; 10.124 ; 10.124 ; Fall       ; clock           ;
+; m3        ; clock      ; 9.906  ; 9.906  ; Fall       ; clock           ;
+; m4        ; clock      ; 9.481  ; 9.481  ; Fall       ; clock           ;
+; oi        ; clock      ; 9.951  ; 9.951  ; Fall       ; clock           ;
+; oo        ; clock      ; 10.802 ; 10.802 ; Fall       ; clock           ;
+; r1        ; clock      ; 9.272  ; 9.272  ; Fall       ; clock           ;
+; r2        ; clock      ; 9.504  ; 9.504  ; Fall       ; clock           ;
+; r3        ; clock      ; 9.159  ; 9.159  ; Fall       ; clock           ;
+; r4        ; clock      ; 9.285  ; 9.285  ; Fall       ; clock           ;
+; troco     ; clock      ; 10.191 ; 10.191 ; Fall       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ii        ; clock      ; 5.039 ; 5.039 ; Fall       ; clock           ;
+; io        ; clock      ; 5.105 ; 5.105 ; Fall       ; clock           ;
+; m1        ; clock      ; 4.943 ; 4.943 ; Fall       ; clock           ;
+; m2        ; clock      ; 5.141 ; 5.141 ; Fall       ; clock           ;
+; m3        ; clock      ; 5.011 ; 5.011 ; Fall       ; clock           ;
+; m4        ; clock      ; 4.813 ; 4.813 ; Fall       ; clock           ;
+; oi        ; clock      ; 4.886 ; 4.886 ; Fall       ; clock           ;
+; oo        ; clock      ; 5.289 ; 5.289 ; Fall       ; clock           ;
+; r1        ; clock      ; 4.862 ; 4.862 ; Fall       ; clock           ;
+; r2        ; clock      ; 4.966 ; 4.966 ; Fall       ; clock           ;
+; r3        ; clock      ; 4.795 ; 4.795 ; Fall       ; clock           ;
+; r4        ; clock      ; 4.862 ; 4.862 ; Fall       ; clock           ;
+; troco     ; clock      ; 5.122 ; 5.122 ; Fall       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; ii          ;    ; 7.010 ; 7.010 ;    ;
+; reset      ; io          ;    ; 7.454 ; 7.454 ;    ;
+; reset      ; m1          ;    ; 6.943 ; 6.943 ;    ;
+; reset      ; m2          ;    ; 7.149 ; 7.149 ;    ;
+; reset      ; m3          ;    ; 7.061 ; 7.061 ;    ;
+; reset      ; m4          ;    ; 6.949 ; 6.949 ;    ;
+; reset      ; oi          ;    ; 7.314 ; 7.314 ;    ;
+; reset      ; oo          ;    ; 7.437 ; 7.437 ;    ;
+; reset      ; r1          ;    ; 5.519 ; 5.519 ;    ;
+; reset      ; r2          ;    ; 5.522 ; 5.522 ;    ;
+; reset      ; r3          ;    ; 5.759 ; 5.759 ;    ;
+; reset      ; r4          ;    ; 6.719 ; 6.719 ;    ;
+; reset      ; troco       ;    ; 5.539 ; 5.539 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; ii          ;    ; 3.630 ; 3.630 ;    ;
+; reset      ; io          ;    ; 3.798 ; 3.798 ;    ;
+; reset      ; m1          ;    ; 3.574 ; 3.574 ;    ;
+; reset      ; m2          ;    ; 3.663 ; 3.663 ;    ;
+; reset      ; m3          ;    ; 3.625 ; 3.625 ;    ;
+; reset      ; m4          ;    ; 3.622 ; 3.622 ;    ;
+; reset      ; oi          ;    ; 3.747 ; 3.747 ;    ;
+; reset      ; oo          ;    ; 3.803 ; 3.803 ;    ;
+; reset      ; r1          ;    ; 2.907 ; 2.907 ;    ;
+; reset      ; r2          ;    ; 2.908 ; 2.908 ;    ;
+; reset      ; r3          ;    ; 3.035 ; 3.035 ;    ;
+; reset      ; r4          ;    ; 3.475 ; 3.475 ;    ;
+; reset      ; troco       ;    ; 2.920 ; 2.920 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 0        ; 0        ; 0        ; 63       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 0        ; 0        ; 0        ; 63       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 12    ; 12   ;
+; Unconstrained Input Port Paths  ; 117   ; 117  ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 39    ; 39   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Dec 09 18:05:33 2019
+Info: Command: quartus_sta war -c war
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'war.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.992
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.992        -5.793 clock 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222       -24.222 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.129
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.129         0.000 clock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222       -24.222 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 391 megabytes
+    Info: Processing ended: Mon Dec 09 18:05:34 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
