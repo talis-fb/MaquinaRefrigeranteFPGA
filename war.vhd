@@ -45,7 +45,14 @@ ENTITY war IS
         oo : OUT STD_LOGIC;
         oi : OUT STD_LOGIC;
         io : OUT STD_LOGIC;
-        ii : OUT STD_LOGIC
+        ii : OUT STD_LOGIC;
+		  
+		  moneySeg0 : out bit_vector(6 downto 0);
+		  moneySeg1 : out bit_vector(6 downto 0);
+		  
+		  precoSeg0 : out bit_vector(6 downto 0);
+		  precoSeg1 : out bit_vector(6 downto 0)
+		  	  
     );
 END war;
 
@@ -53,6 +60,14 @@ ARCHITECTURE BEHAVIOR OF war IS
     TYPE type_fstate IS (principio,start1,start2,start3,start4,r1i05,r1EndClear,r1Troco,r2i05,r2i10,r2EndClear,r2Troco,r3i05,r3i10,r3i15,r3EndClear,r3Troco,r4i05,r4i10,r4i15,r4i20,r4EndClear,r4Troco);
     SIGNAL fstate : type_fstate;
     SIGNAL reg_fstate : type_fstate;
+	 
+	 signal ooS: bit;
+	 signal ol: bit;
+	 signal lo: bit;
+	 signal ll: bit;
+	 signal money: bit_vector(2 downto 0);
+	 signal refrigs: bit_vector(2 downto 0);
+	 
 BEGIN
     PROCESS (clock,reg_fstate)
     BEGIN
@@ -106,6 +121,11 @@ BEGIN
                     ELSE
                         reg_fstate <= principio;
                     END IF;
+						  
+						  money<="111";
+						  refrigs<="111";
+						  
+						  
                 WHEN start1 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r1i05;
@@ -117,6 +137,9 @@ BEGIN
                     END IF;
 
                     r1 <= '1';
+						  refrigs<="000";
+						  money<="111";
+						  
                 WHEN start2 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r2i05;
@@ -128,6 +151,9 @@ BEGIN
                     END IF;
 
                     r2 <= '1';
+						  refrigs<="001";
+						  money<="111";
+						  
                 WHEN start3 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r3i05;
@@ -139,6 +165,9 @@ BEGIN
                     END IF;
 
                     r3 <= '1';
+						  refrigs<="010";
+						  money<="111";
+						  
                 WHEN start4 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r4i05;
@@ -150,6 +179,9 @@ BEGIN
                     END IF;
 
                     r4 <= '1';
+						  refrigs<="011";
+						  money<="111";
+						  
                 WHEN r1i05 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r1EndClear;
@@ -161,6 +193,10 @@ BEGIN
                     END IF;
 
                     oo <= '1';
+						  ooS<= '1';
+						  money<="000";
+						  refrigs<="000";
+						  
                 WHEN r1EndClear =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -170,6 +206,9 @@ BEGIN
                     END IF;
 
                     m1 <= '1';
+						  money<="001";
+						  refrigs<="000";
+						  
                 WHEN r1Troco =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -181,6 +220,9 @@ BEGIN
                     troco <= '1';
 
                     m1 <= '1';
+						  money<="010";
+						  refrigs<="000";
+						  
                 WHEN r2i05 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r2i10;
@@ -192,6 +234,10 @@ BEGIN
                     END IF;
 
                     oo <= '1';
+						  ooS<= '1';
+						  money<="000";
+						  refrigs<="001";
+						  
                 WHEN r2i10 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r2EndClear;
@@ -203,6 +249,10 @@ BEGIN
                     END IF;
 
                     oi <= '1';
+						  ol <= '1';
+						  money<="001";
+						  refrigs<="001";
+						  
                 WHEN r2EndClear =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -212,6 +262,9 @@ BEGIN
                     END IF;
 
                     m2 <= '1';
+						  money<="010";
+						  refrigs<="001";
+						  
                 WHEN r2Troco =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -223,6 +276,9 @@ BEGIN
                     troco <= '1';
 
                     m2 <= '1';
+						  money<="011";
+						  refrigs<="001";
+						  
                 WHEN r3i05 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r3i10;
@@ -234,6 +290,10 @@ BEGIN
                     END IF;
 
                     oo <= '1';
+						  ooS<= '1';
+						  money<="000";
+						  refrigs<="010";
+						  
                 WHEN r3i10 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r3i15;
@@ -245,6 +305,10 @@ BEGIN
                     END IF;
 
                     oi <= '1';
+						  ol <= '1';
+						  money<="001";
+						  refrigs<="010";
+						  
                 WHEN r3i15 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r3EndClear;
@@ -256,6 +320,10 @@ BEGIN
                     END IF;
 
                     io <= '1';
+						  lo <= '1';
+						  money<="010";
+						  refrigs<="010";
+						  
                 WHEN r3EndClear =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -265,6 +333,9 @@ BEGIN
                     END IF;
 
                     m3 <= '1';
+						  money<="011";
+						  refrigs<="010";
+						  
                 WHEN r3Troco =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -274,6 +345,8 @@ BEGIN
                     END IF;
 
                     troco <= '1';
+						  money<="100";
+						  refrigs<="010";
 
                     m3 <= '1';
                 WHEN r4i05 =>
@@ -287,6 +360,10 @@ BEGIN
                     END IF;
 
                     oo <= '1';
+						  ooS<= '1';
+						  money<="000";
+						  refrigs<="011";
+						  
                 WHEN r4i10 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r4i15;
@@ -298,6 +375,10 @@ BEGIN
                     END IF;
 
                     oi <= '1';
+						  ol <= '1';
+						  money<="001";
+						  refrigs<="011";
+						  
                 WHEN r4i15 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
                         reg_fstate <= r4i20;
@@ -309,9 +390,13 @@ BEGIN
                     END IF;
 
                     io <= '1';
+						  lo <= '1';
+						  money<="010";
+						  refrigs<="011";
+						  
                 WHEN r4i20 =>
                     IF (((cent = '1') AND (dolar = '0'))) THEN
-                        reg_fstate <= r1EndClear;
+                        reg_fstate <= r4EndClear;
                     ELSIF (((cent = '0') AND (dolar = '1'))) THEN
                         reg_fstate <= r4Troco;
                     -- Inserting 'else' block to prevent latch inference
@@ -320,6 +405,10 @@ BEGIN
                     END IF;
 
                     ii <= '1';
+						  ll <= '1';
+						  money<="011";
+						  refrigs<="011";
+						  
                 WHEN r4EndClear =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -329,6 +418,9 @@ BEGIN
                     END IF;
 
                     m4 <= '1';
+						  money<="100";
+						  refrigs<="011";
+						  
                 WHEN r4Troco =>
                     IF ((finalizado = '1')) THEN
                         reg_fstate <= principio;
@@ -338,6 +430,8 @@ BEGIN
                     END IF;
 
                     troco <= '1';
+						  money<="101";
+						  refrigs<="011";
 
                     m4 <= '1';
                 WHEN OTHERS => 
@@ -358,4 +452,52 @@ BEGIN
             END CASE;
         END IF;
     END PROCESS;
+	
+	 
+	 --money(0)<= ol or ll;
+	 --money(1)<= lo or ll;
+	 
+	 with money select
+		moneySeg0<= "1000000" when "000",
+		  --gfedcba
+			"1111001" when "001",
+			"1111001" when "010",
+			"0100100" when "011",
+			"0100100" when "100",
+			"0110000" when "101",
+			"1000000" when "111",
+			"0001001" when others;
+
+	with money select
+		moneySeg1<= "0010010" when "000",
+			"1000000" when "001",
+			"0010010" when "010",
+			"1000000" when "011",
+			"0010010" when "100",
+			"1000000" when "101",
+			"1000000" when "111",
+			"0001001" when others;
+			
+--------------------------------------------------
+			
+	with refrigs select
+		precoSeg0<= "1111001" when "000",
+		  --gfedcba
+			"1111001" when "001",
+			"0100100" when "010",
+			"0100100" when "011",
+			"1000000" when "111",
+			"0001001" when others;
+
+	with refrigs select
+		precoSeg1<= "1000000" when "000",
+			"0010010" when "001",
+			"1000000" when "010",
+			"0010010" when "011",
+			"1000000" when "111",
+			"0001001" when others;
+	 
+	 
+	 
+	 
 END BEHAVIOR;

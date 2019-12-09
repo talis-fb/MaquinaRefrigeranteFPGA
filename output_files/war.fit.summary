@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Dec 09 18:05:29 2019
+Fitter Status : Successful - Mon Dec 09 19:34:04 2019
 Quartus II 64-Bit Version : 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition
 Revision Name : war
 Top-level Entity Name : war
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 61 / 33,216 ( < 1 % )
-    Total combinational functions : 61 / 33,216 ( < 1 % )
+Total logic elements : 94 / 33,216 ( < 1 % )
+    Total combinational functions : 94 / 33,216 ( < 1 % )
     Dedicated logic registers : 23 / 33,216 ( < 1 % )
 Total registers : 23
-Total pins : 26 / 475 ( 5 % )
+Total pins : 54 / 475 ( 11 % )
 Total virtual pins : 0
 Total memory bits : 0 / 483,840 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )

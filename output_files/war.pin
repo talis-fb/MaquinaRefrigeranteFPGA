@@ -481,14 +481,14 @@ GND*                         : K24       :        :                   :         
 GND*                         : K25       :        :                   :         : 5         :                
 GND*                         : K26       :        :                   :         : 5         :                
 VCCIO2                       : L1        : power  :                   : 3.3V    : 2         :                
-GND*                         : L2        :        :                   :         : 2         :                
-GND*                         : L3        :        :                   :         : 2         :                
+precoSeg0[1]                 : L2        : output : 3.3-V LVTTL       :         : 2         : Y              
+precoSeg0[0]                 : L3        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : L4        :        :                   :         : 2         :                
 GND                          : L5        : gnd    :                   :         :           :                
-GND*                         : L6        :        :                   :         : 2         :                
-GND*                         : L7        :        :                   :         : 2         :                
+precoSeg0[3]                 : L6        : output : 3.3-V LVTTL       :         : 2         : Y              
+precoSeg0[4]                 : L7        : output : 3.3-V LVTTL       :         : 2         : Y              
 TMS                          : L8        : input  :                   :         : 2         :                
-GND*                         : L9        :        :                   :         : 2         :                
+precoSeg0[2]                 : L9        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : L10       :        :                   :         : 2         :                
 VCCINT                       : L11       : power  :                   : 1.2V    :           :                
 GND                          : L12       : gnd    :                   :         :           :                
@@ -507,10 +507,10 @@ GND*                         : L24       :        :                   :         
 GND*                         : L25       :        :                   :         : 5         :                
 VCCIO5                       : L26       : power  :                   : 3.3V    : 5         :                
 GND                          : M1        : gnd    :                   :         :           :                
-GND*                         : M2        :        :                   :         : 2         :                
-GND*                         : M3        :        :                   :         : 2         :                
-GND*                         : M4        :        :                   :         : 2         :                
-GND*                         : M5        :        :                   :         : 2         :                
+precoSeg1[3]                 : M2        : output : 3.3-V LVTTL       :         : 2         : Y              
+precoSeg1[4]                 : M3        : output : 3.3-V LVTTL       :         : 2         : Y              
+precoSeg1[6]                 : M4        : output : 3.3-V LVTTL       :         : 2         : Y              
+precoSeg1[5]                 : M5        : output : 3.3-V LVTTL       :         : 2         : Y              
 TCK                          : M6        : input  :                   :         : 2         :                
 TDO                          : M7        : output :                   :         : 2         :                
 TDI                          : M8        : input  :                   :         : 2         :                
@@ -540,7 +540,7 @@ VCCIO2                       : N5        : power  :                   : 3.3V    
 DCLK                         : N6        :        :                   :         : 2         :                
 nCONFIG                      : N7        :        :                   :         : 2         :                
 GND                          : N8        : gnd    :                   :         :           :                
-GND*                         : N9        :        :                   :         : 2         :                
+precoSeg0[6]                 : N9        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCINT                       : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
 GND                          : N12       : gnd    :                   :         :           :                
@@ -560,13 +560,13 @@ dolar                        : N25       : input  : 3.3-V LVTTL       :         
 cent                         : N26       : input  : 3.3-V LVTTL       :         : 5         : Y              
 est3                         : P1        : input  : 3.3-V LVTTL       :         : 1         : Y              
 est2                         : P2        : input  : 3.3-V LVTTL       :         : 1         : Y              
-GND*                         : P3        :        :                   :         : 1         :                
-GND*                         : P4        :        :                   :         : 1         :                
+precoSeg1[2]                 : P3        : output : 3.3-V LVTTL       :         : 1         : Y              
+precoSeg1[1]                 : P4        : output : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : P5        : power  :                   : 3.3V    : 1         :                
-GND*                         : P6        :        :                   :         : 1         :                
-GND*                         : P7        :        :                   :         : 1         :                
+moneySeg0[1]                 : P6        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg0[2]                 : P7        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : P8        : gnd    :                   :         :           :                
-GND*                         : P9        :        :                   :         : 2         :                
+precoSeg0[5]                 : P9        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCINT                       : P10       : power  :                   : 1.2V    :           :                
 GND                          : P11       : gnd    :                   :         :           :                
 GND                          : P12       : gnd    :                   :         :           :                
@@ -585,12 +585,12 @@ GND*                         : P24       :        :                   :         
 GND+                         : P25       :        :                   :         : 6         :                
 GND+                         : P26       :        :                   :         : 6         :                
 GND                          : R1        : gnd    :                   :         :           :                
-GND*                         : R2        :        :                   :         : 1         :                
-GND*                         : R3        :        :                   :         : 1         :                
-GND*                         : R4        :        :                   :         : 1         :                
-GND*                         : R5        :        :                   :         : 1         :                
-GND*                         : R6        :        :                   :         : 1         :                
-GND*                         : R7        :        :                   :         : 1         :                
+precoSeg1[0]                 : R2        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg0[6]                 : R3        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg0[5]                 : R4        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg0[4]                 : R5        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg1[5]                 : R6        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg1[4]                 : R7        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : R8        :        :                   :         : 1         :                
 VCCIO1                       : R9        : power  :                   : 3.3V    : 1         :                
 VCCINT                       : R10       : power  :                   : 1.2V    :           :                
@@ -611,14 +611,14 @@ GND*                         : R24       :        :                   :         
 GND*                         : R25       :        :                   :         : 6         :                
 GND                          : R26       : gnd    :                   :         :           :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
-GND*                         : T2        :        :                   :         : 1         :                
-GND*                         : T3        :        :                   :         : 1         :                
-GND*                         : T4        :        :                   :         : 1         :                
+moneySeg0[0]                 : T2        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg1[6]                 : T3        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg1[3]                 : T4        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : T5        : gnd    :                   :         :           :                
 GND*                         : T6        :        :                   :         : 1         :                
 est1                         : T7        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : T8        :        :                   :         : 1         :                
-GND*                         : T9        :        :                   :         : 1         :                
+moneySeg0[3]                 : T9        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : T10       :        :                   :         : 1         :                
 VCCINT                       : T11       : power  :                   : 1.2V    :           :                
 GND                          : T12       : gnd    :                   :         :           :                
@@ -636,15 +636,15 @@ GND*                         : T23       :        :                   :         
 GND*                         : T24       :        :                   :         : 6         :                
 GND*                         : T25       :        :                   :         : 6         :                
 VCCIO6                       : T26       : power  :                   : 3.3V    : 6         :                
-GND*                         : U1        :        :                   :         : 1         :                
-GND*                         : U2        :        :                   :         : 1         :                
+moneySeg1[1]                 : U1        : output : 3.3-V LVTTL       :         : 1         : Y              
+moneySeg1[2]                 : U2        : output : 3.3-V LVTTL       :         : 1         : Y              
 b4                           : U3        : input  : 3.3-V LVTTL       :         : 1         : Y              
 b3                           : U4        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : U5        :        :                   :         : 1         :                
 GND*                         : U6        :        :                   :         : 1         :                
 GND*                         : U7        :        :                   :         : 1         :                
 GND                          : U8        : gnd    :                   :         :           :                
-GND*                         : U9        :        :                   :         : 1         :                
+moneySeg1[0]                 : U9        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : U10       :        :                   :         : 1         :                
 VCCINT                       : U11       : power  :                   : 1.2V    :           :                
 GND*                         : U12       :        :                   :         : 8         :                

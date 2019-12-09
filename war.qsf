@@ -78,5 +78,33 @@ set_location_assignment PIN_AF23 -to io
 set_location_assignment PIN_AE23 -to ii
 set_location_assignment PIN_AD13 -to reset
 set_global_assignment -name CDF_FILE output_files/Chain3.cdf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name CDF_FILE output_files/Chain4.cdf
+set_location_assignment PIN_R3 -to moneySeg0[6]
+set_location_assignment PIN_R4 -to moneySeg0[5]
+set_location_assignment PIN_R5 -to moneySeg0[4]
+set_location_assignment PIN_T9 -to moneySeg0[3]
+set_location_assignment PIN_P7 -to moneySeg0[2]
+set_location_assignment PIN_P6 -to moneySeg0[1]
+set_location_assignment PIN_T2 -to moneySeg0[0]
+set_location_assignment PIN_T3 -to moneySeg1[6]
+set_location_assignment PIN_R6 -to moneySeg1[5]
+set_location_assignment PIN_R7 -to moneySeg1[4]
+set_location_assignment PIN_T4 -to moneySeg1[3]
+set_location_assignment PIN_U2 -to moneySeg1[2]
+set_location_assignment PIN_U1 -to moneySeg1[1]
+set_location_assignment PIN_U9 -to moneySeg1[0]
+set_location_assignment PIN_N9 -to precoSeg0[6]
+set_location_assignment PIN_P9 -to precoSeg0[5]
+set_location_assignment PIN_L7 -to precoSeg0[4]
+set_location_assignment PIN_L6 -to precoSeg0[3]
+set_location_assignment PIN_L9 -to precoSeg0[2]
+set_location_assignment PIN_L2 -to precoSeg0[1]
+set_location_assignment PIN_L3 -to precoSeg0[0]
+set_location_assignment PIN_M4 -to precoSeg1[6]
+set_location_assignment PIN_M5 -to precoSeg1[5]
+set_location_assignment PIN_M3 -to precoSeg1[4]
+set_location_assignment PIN_M2 -to precoSeg1[3]
+set_location_assignment PIN_P3 -to precoSeg1[2]
+set_location_assignment PIN_P4 -to precoSeg1[1]
+set_location_assignment PIN_R2 -to precoSeg1[0]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
